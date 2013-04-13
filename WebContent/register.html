@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>施福基督教会 Suffolk Christian Church | 校园团契</title>
+	<style type="text/css">
+		nav ul {
+			list-style-type: none;
+		}
+		nav ul li {
+			display:inline;
+		}
+
+		form {
+			display: block;
+		}
+		#form-flightNumber::-webkit-input-placeholder { text-transform:none; }
+		#form-flightNumber:-moz-placeholder { text-transform:none; }
+	</style>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script>
+		function formDestinationChange(select){
+			if (select == "other") {
+				$("#form-offCampus").css("display", "inline");
+				$("#form-label-offCampus").css("display", "inline");
+			} else {
+				$("#form-offCampus").css("display", "none");
+				$("#form-label-offCampus").css("display", "none");
+			};
+			
+		}
+	</script>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="register.html">Register for Airport Pick-up</a></li>
+			<li><a href="listUser.jsp">Show all users</a></li>
+		</ul>
+	</nav>
+	<div class="body">
+		<div class="body-title"><h1>教会接机报名</h1></div>
+		<div class="body-content">
+			<form action="" method="post">
+				<div class="required-asterisk">* Required</div>
+				<div class="">
+					<p>基本信息</p>
+					<label for="form-lastName">姓: </label>
+					<input type="text" name="lastName" id="form-lastName" placeholder="Last name"><span class="ss-required-asterisk">*</span>
+					<label for="form-firstName">名: </label>
+					<input type="text" name="firstName" id="form-firstName" placeholder="First name">
+					<span class="ss-required-asterisk">*</span><br>
+				</div>
+				<p>航班信息</p>
+				<label for="form-flightDate">到达日期: </label>
+				<input type="text" name="flightDate" id="form-flightDate" placeholder="Flight date">
+				<span class="ss-required-asterisk">*</span><br>
+				<label for="form-flightNumber">航班号: </label>
+				<input type="text" name="flightNumber" id="form-flightNumber" style="text-transform:uppercase" placeholder="Flight number">
+				<span class="ss-required-asterisk">*</span><br>
+				<label for="form-flightArrivalTime">到达时间: </label>
+				<input type="text" name="flightArrivalTime" id="form-flightArrivalTime" placeholder="Arrival time">
+				<span class="ss-required-asterisk">*</span><br>
+				<label for="form-flightArrivalTerminal">到达航站楼: </label>
+				<input type="text" name="flightArrivalTerminal" id="form-flightArrivalTerminal" placeholder="Arrival terminal">
+				<span class="ss-required-asterisk">*</span><br>
+				<p>石溪信息</p>
+				<label for="form-destination">宿舍或校外住址: </label>
+				<select name="destination" id="form-destination" onchange="formDestinationChange(this.value)">
+					<option value="chapin">Chapin</option>
+					<option value="west">Schomburg or West</option>
+					<option value="other">校外或其他</option>
+				</select>
+				<label for="form-offCampus" id="form-label-offCampus" style="display: none;">校外住址: </label>
+				<input type="text" name="offCampus" id="form-offCampus" placeholder="Off campus address" style="display: none;"><br>
+				<label for="form-qq">QQ: </label>
+				<input type="text" name="qq" id="form-qq" placeholder="QQ"><br>
+				<label for="form-qqName">群名片: </label>
+				<input type="text" name="qqName" id="form-qqName" placeholder="QQ name"><br>
+				<label for="form-email">邮箱: </label>
+				<input type="email" name="email" id="form-email" placeholder="Email"><span class="ss-required-asterisk">*</span><br>
+				<label for="form-studentId">学号: </label>
+				<input type="text" name="studentId" id="form-studentId" placeholder="Student ID"><br>
+				<label for="form-emergencyContact">国内紧急联系电话: </label>
+				<input type="text" name="emergencyContact" id="form-emergencyContact" placeholder="Emergency contact" onkeyup= "value=value.replace(/[^\d]/g, '')">
+				<span class="ss-required-asterisk">*</span><br>
+				<input type="reset" value="reset">
+				<input type="submit" value="submit">
+			</form>
+		</div>
+	</div>
+</body>
+</html>
