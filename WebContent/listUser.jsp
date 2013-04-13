@@ -27,9 +27,16 @@
         <thead>
             <tr>
                 <th>User Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>DOB</th>
+                <th>Name</th>
+                <th>Flight Date</th>
+                <th>Flight Number</th>
+                <th>Arrival Time</th>
+                <th>Arrival Terminal</th>
+                <th>Apartment</th>
+                <th>Off Campus Address</th>
+                <th>QQ</th>
+                <th>QQ Name</th>
+                <th>Email</th>
                 <th>Email</th>
                 <th colspan=2>Action</th>
             </tr>
@@ -38,8 +45,7 @@
             <c:forEach items="${users}" var="user">
                 <tr>
                     <td><c:out value="${user.userid}" /></td>
-                    <td><c:out value="${user.firstName}" /></td>
-                    <td><c:out value="${user.lastName}" /></td>
+                    <td><c:out value="${user.firstName}${user.lastName}" /></td>
                     <td><fmt:formatDate pattern="MM/dd/yyyy" value="${user.dob}" /></td>
                     <td><c:out value="${user.email}" /></td>
                     <td><a href="UserController?action=edit&userId=<c:out value="${user.userid}"/>" >Update</a></td>
