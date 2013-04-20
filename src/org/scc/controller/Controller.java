@@ -1,6 +1,7 @@
 package org.scc.controller;
 
 import java.io.IOException;
+import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -40,6 +41,8 @@ public class Controller extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+		
 		Airline airline = new Airline();
 		
 		  String aD = request.getParameter("flightDate");
@@ -49,8 +52,15 @@ public class Controller extends HttpServlet {
 		  } catch (ParseException e) {
 			  System.out.println(e);
 		  }
-		  airline.setArrivalTime(aT);
-		
+		  
+		  Date z;
+		  try {			  
+			  z = timeFormat.parse(aT);
+			  airline.setArrivalTime(new Time(z.getTime()));
+		  } catch (ParseException e) {
+			  System.out.println(e);
+		  }
+		  		
 		  airline.setFlightNumber(request.getParameter("flightNumber"));
 		  int terminal = Integer.parseInt(request.getParameter("flightArrivalTerminal"));
 		  airline.setTerminal(terminal);
