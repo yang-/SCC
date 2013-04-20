@@ -19,7 +19,7 @@ public class UserDao {
 	public void addUser(User user) {		
 		try {
 			PreparedStatement preparedStatement = connection.
-					prepareStatement("insert into newstudent(firstname, lastname, DOB, email) value (?, ?, ?, ?)");
+					prepareStatement("insert into new_student(first_name, last_name, date_of_birth, Email) value (?, ?, ?, ?)");
 			preparedStatement.setString(1, user.getFirstName());
 			preparedStatement.setString(2, user.getLastName());
 			java.sql.Date sqlDate = new java.sql.Date(user.getDOB().getTime());
@@ -35,7 +35,7 @@ public class UserDao {
 	public void addAirline(Airline airline) {
 		try {
 			PreparedStatement preparedStatement = connection.
-					prepareStatement("insert into airline(arrivalDate, arrivalTime, flightNumber, terminal) value (?, ?, ?, ?)");
+					prepareStatement("insert into airline(Arrival_Date, Arrival_Time, Flight_Number, Terminal) value (?, ?, ?, ?)");
 			java.sql.Date sqlDate = new java.sql.Date(airline.getArrivalDate().getTime());
 			preparedStatement.setDate(1, sqlDate);
 			preparedStatement.setTime(2, airline.getArrivalTime());
