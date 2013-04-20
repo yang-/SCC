@@ -8,7 +8,7 @@ public class User {
 	private String lastName;
 	private String gender;
 	private Date initDate;
-	private Date DOB;
+	private java.sql.Date DOB;
 	private String QQ;
 	private String email;
 	private int airlineId;
@@ -64,11 +64,11 @@ public class User {
 		this.initDate = now;
 	}
 
-	public Date getDOB() {
+	public java.sql.Date getDOB() {
 		return DOB;
 	}
 
-	public void setDOB(Date birthDate) {
+	public void setDOB(java.sql.Date birthDate) {
 		this.DOB = birthDate;
 	}
 

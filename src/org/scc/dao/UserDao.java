@@ -38,7 +38,7 @@ public class UserDao {
 					prepareStatement("insert into airline(arrivalDate, arrivalTime, flightNumber, terminal) value (?, ?, ?, ?)");
 			java.sql.Date sqlDate = new java.sql.Date(airline.getArrivalDate().getTime());
 			preparedStatement.setDate(1, sqlDate);
-			preparedStatement.setString(2, airline.getArrivalTime());
+			preparedStatement.setTime(2, airline.getArrivalTime());
 			preparedStatement.setString(3, airline.getFlightNumber());
 			preparedStatement.setInt(4, airline.getTerminal());
 			
