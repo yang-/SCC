@@ -42,21 +42,25 @@ public class Controller extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		
 		Airline airline = new Airline();
 		
 		  String aD = request.getParameter("flightDate");
 		  String aT = request.getParameter("flightArrivalTime");
+		  
+		  java.sql.Date zD;
 		  try {
-			  airline.setArrivalDate(new SimpleDateFormat("MM/dd/yyyy").parse(aD));
+			  zD = new java.sql.Date(dateFormat.parse(aD).getTime());
+			  airline.setArrivalDate(zD);
 		  } catch (ParseException e) {
 			  System.out.println(e);
 		  }
 		  
-		  Date z;
+		  Date zT;
 		  try {			  
-			  z = timeFormat.parse(aT);
-			  airline.setArrivalTime(new Time(z.getTime()));
+			  zT = timeFormat.parse(aT);
+			  airline.setArrivalTime(new Time(zT.getTime()));
 		  } catch (ParseException e) {
 			  System.out.println(e);
 		  }

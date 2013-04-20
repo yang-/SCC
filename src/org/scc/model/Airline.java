@@ -1,12 +1,11 @@
 package org.scc.model;
 
 import java.sql.Time;
-import java.util.Date;
 
 public class Airline {
 	
 	private int id;
-	private Date arrivalDate;
+	private java.sql.Date arrivalDate;
 	private String flightNumber;
 	private Time arrivalTime;
 	private int terminal;
@@ -17,10 +16,10 @@ public class Airline {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Date getArrivalDate() {
+	public java.sql.Date getArrivalDate() {
 		return arrivalDate;
 	}
-	public void setArrivalDate(Date arrivalDate) {
+	public void setArrivalDate(java.sql.Date arrivalDate) {
 		this.arrivalDate = arrivalDate;
 	}
 	public String getFlightNumber() {
