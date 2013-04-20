@@ -12,9 +12,7 @@ public class User {
 	private String QQ;
 	private String email;
 	private int airlineId;
-	private int sbuId;
-	
-	
+	private int sbuId;	
 
 	public int getAirlineId() {
 		return airlineId;

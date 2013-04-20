@@ -19,12 +19,10 @@ public class UserDao {
 	public void addUser(User user) {		
 		try {
 			PreparedStatement preparedStatement = connection.
-					prepareStatement("insert into new_student(first_name, last_name, date_of_birth, Email) value (?, ?, ?, ?)");
+					prepareStatement("insert into new_student(first_name, last_name, Email) value (?, ?, ?)");
 			preparedStatement.setString(1, user.getFirstName());
 			preparedStatement.setString(2, user.getLastName());
-			java.sql.Date sqlDate = new java.sql.Date(user.getDOB().getTime());
-			preparedStatement.setDate(3, sqlDate);
-			preparedStatement.setString(1, user.getEmail());
+			preparedStatement.setString(3, user.getEmail());
 			
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -36,8 +34,7 @@ public class UserDao {
 		try {
 			PreparedStatement preparedStatement = connection.
 					prepareStatement("insert into airline(Arrival_Date, Arrival_Time, Flight_Number, Terminal) value (?, ?, ?, ?)");
-			java.sql.Date sqlDate = new java.sql.Date(airline.getArrivalDate().getTime());
-			preparedStatement.setDate(1, sqlDate);
+			preparedStatement.setDate(1, airline.getArrivalDate());
 			preparedStatement.setTime(2, airline.getArrivalTime());
 			preparedStatement.setString(3, airline.getFlightNumber());
 			preparedStatement.setInt(4, airline.getTerminal());
