@@ -43,47 +43,106 @@
 		<div class="body-content">
 			<form action="" method="post">
 				<div class="required-asterisk">* Required</div>
-				<div class="">
+				<div class="form-basicInfo">
 					<p>基本信息</p>
 					<label for="form-lastName">姓: </label>
 					<input type="text" name="lastName" id="form-lastName" placeholder="Last name"><span class="ss-required-asterisk">*</span>
 					<label for="form-firstName">名: </label>
 					<input type="text" name="firstName" id="form-firstName" placeholder="First name">
 					<span class="ss-required-asterisk">*</span><br>
+					<label for="form-email">邮箱: </label>
+					<input type="email" name="email" id="form-email" placeholder="Email"><span class="ss-required-asterisk">*</span><br>
+					<label for="form-emergencyContact">国内紧急联系电话: </label>
+					<input type="text" name="emergencyContact" id="form-emergencyContact" placeholder="Emergency contact" onkeyup= "value=value.replace(/[^\d]/g, '')">
+					<span class="ss-required-asterisk">*</span><br>
 				</div>
-				<p>航班信息</p>
-				<label for="form-flightDate">到达日期: </label>
-				<input type="text" name="flightDate" id="form-flightDate" placeholder="Flight date">
-				<span class="ss-required-asterisk">*</span><br>
-				<label for="form-flightNumber">航班号: </label>
-				<input type="text" name="flightNumber" id="form-flightNumber" style="text-transform:uppercase" placeholder="Flight number">
-				<span class="ss-required-asterisk">*</span><br>
-				<label for="form-flightArrivalTime">到达时间: </label>
-				<input type="text" name="flightArrivalTime" id="form-flightArrivalTime" placeholder="Arrival time">
-				<span class="ss-required-asterisk">*</span><br>
-				<label for="form-flightArrivalTerminal">到达航站楼: </label>
-				<input type="text" name="flightArrivalTerminal" id="form-flightArrivalTerminal" placeholder="Arrival terminal">
-				<span class="ss-required-asterisk">*</span><br>
-				<p>石溪信息</p>
-				<label for="form-destination">宿舍或校外住址: </label>
-				<select name="destination" id="form-destination" onchange="formDestinationChange(this.value)">
-					<option value="chapin">Chapin</option>
-					<option value="west">Schomburg or West</option>
-					<option value="other">校外或其他</option>
-				</select>
-				<label for="form-offCampus" id="form-label-offCampus" style="display: none;">校外住址: </label>
-				<input type="text" name="offCampus" id="form-offCampus" placeholder="Off campus address" style="display: none;"><br>
-				<label for="form-qq">QQ: </label>
-				<input type="text" name="qq" id="form-qq" placeholder="QQ"><br>
-				<label for="form-qqName">群名片: </label>
-				<input type="text" name="qqName" id="form-qqName" placeholder="QQ name"><br>
-				<label for="form-email">邮箱: </label>
-				<input type="email" name="email" id="form-email" placeholder="Email"><span class="ss-required-asterisk">*</span><br>
-				<label for="form-studentId">学号: </label>
-				<input type="text" name="studentId" id="form-studentId" placeholder="Student ID"><br>
-				<label for="form-emergencyContact">国内紧急联系电话: </label>
-				<input type="text" name="emergencyContact" id="form-emergencyContact" placeholder="Emergency contact" onkeyup= "value=value.replace(/[^\d]/g, '')">
-				<span class="ss-required-asterisk">*</span><br>
+				<div class="form-flightInfo">
+					<p>航班信息</p>
+					<label for="form-flightDate">到达日期: </label>
+					<input type="text" name="flightDate" id="form-flightDate" placeholder="Flight date">
+					<span class="ss-required-asterisk">*</span><br>
+					<label for="form-flightNumber">航班号: </label>
+					<input type="text" name="flightNumber" id="form-flightNumber" style="text-transform:uppercase" placeholder="Flight number">
+					<span class="ss-required-asterisk">*</span><br>
+					<label for="form-flightArrivalTime">到达时间: </label>
+					<input type="text" name="flightArrivalTime" id="form-flightArrivalTime" placeholder="Arrival time">
+					<span class="ss-required-asterisk">*</span><br>
+					<label for="form-flightArrivalTerminal">到达航站楼: </label>
+					<input type="text" name="flightArrivalTerminal" id="form-flightArrivalTerminal" placeholder="Arrival terminal">
+					<span class="ss-required-asterisk">*</span><br>
+				</div>
+				<div class="form-stonyBrookInfo">
+					<p>石溪信息</p>
+					
+					<label for="form-destination">宿舍或校外住址: </label>
+					<select name="destination" id="form-destination" onchange="formDestinationChange(this.value)">
+						<option value="chapin">Chapin</option>
+						<option value="west">Schomburg or West</option>
+						<option value="other">校外或其他</option>
+					</select>
+					<label for="form-offCampus" id="form-label-offCampus" style="display: none;">校外住址: </label>
+					<input type="text" name="offCampus" id="form-offCampus" placeholder="Off campus address" style="display: none;"><br>
+					<label for="form-studentId">学号: </label>
+					<input type="text" name="studentId" id="form-studentId" placeholder="Student ID"><br>
+					<label for="form-major">专业: </label>
+					<select name="major" id="form-major">
+						<option value="0" selected>Select a program:</option>
+						<option value="UND">本科生未分专业</option>
+						<option value="AFH">Africana Studies</option>
+						<option value="ANT">Anthropology</option>
+						<option value="AMS">Applied Mathematics</option>
+						<option value="ARH">Art History</option>
+						<option value="ARS">Art - Studio</option>
+						<option value="BCB">Biochem &amp; Cell Biology</option>
+						<option value="BME">Biomedical Engineering</option>
+						<option value="MBA">College of Business</option>
+						<option value="CHE">Chemistry</option>
+						<option value="CLCS">Comparative Literary</option>
+						<option value="CSE">Computer Science</option>
+						<option value="CWL">Creative Writing &amp; Literature</option>
+						<option value="BEE">Ecology &amp; Evolution</option>
+						<option value="ESE">Electrical &amp; Computer Engg.</option>
+						<option value="EGL">English</option>
+						<option value="EURO">European Languages</option>
+						<option value="GEO">Geosciences</option>
+						<option value="GSS">Geospatial Science</option>
+						<option value="SPN">Hispanic Languages</option>
+						<option value="HIS">History</option>
+						<option value="ISE">Information Systems</option>
+						<option value="JRN">Journalism</option>
+						<option value="LIN">Linguistics</option>
+						<option value="MAS">Marine Sciences</option>
+						<option value="ESM">Materials Science</option>
+						<option value="MAT">Mathematics</option>
+						<option value="MEC">Mechanical Engg.</option>
+						<option value="MH">Medical Humanities</option>
+						<option value="MUS">Music</option>
+						<option value="HDO">Oral Biology</option>
+						<option value="PHI">Philosophy</option>
+						<option value="PHY">Physics &amp; Astronomy</option>
+						<option value="HBY">Physiology &amp; Biophysics</option>
+						<option value="POL">Political Science</option>	
+						<option value="publichealth">Public Health</option>	
+						<option value="PUB">Public Policy</option>
+						<option value="PSY">Psychology</option>
+						<option value="SOC">Sociology</option>
+						<option value="ARS">Studio Arts</option>
+						<option value="EST">Technology and Society</option>
+						<option value="THR">Theatre Arts</option>
+						<option value="THR2"> Theatre, MFA</option>
+						<option value="WST">Women's Studies</option>        
+						<option value="WRT">Writing and Rhetoric</option>
+						<option value="ohter">Others</option>
+					</select><br>
+
+
+
+					<label for="form-qq">QQ: </label>
+					<input type="text" name="qq" id="form-qq" placeholder="QQ"><br>
+					<label for="form-qqName">群名片: </label>
+					<input type="text" name="qqName" id="form-qqName" placeholder="QQ name"><br>
+				</div>
+				
 				<input type="reset" value="reset">
 				<input type="submit" value="submit">
 			</form>
