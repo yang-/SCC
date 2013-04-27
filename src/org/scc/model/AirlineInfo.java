@@ -1,6 +1,7 @@
 package org.scc.model;
 
 import java.sql.Time;
+import java.util.Arrays;
 import java.util.Date;
 
 public class AirlineInfo {
@@ -50,6 +51,10 @@ public class AirlineInfo {
 		return major_id;
 	}
 
+	public void setMajor_id(String major_name) {
+		this.major_id = Arrays.asList(majorList).indexOf(major_name);
+	}
+	
 	public void setMajor_id(int major_id) {
 		this.major_id = major_id;
 	}
