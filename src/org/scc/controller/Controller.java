@@ -43,7 +43,7 @@ public class Controller extends HttpServlet {
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		
-		AirlineInfo airline = new AirlineInfo();
+		AirlineInfo user = new AirlineInfo();
 		
 		  String aD = request.getParameter("flightDate");
 		  String aT = request.getParameter("flightArrivalTime");
@@ -51,7 +51,7 @@ public class Controller extends HttpServlet {
 		  Date zD;
 		  try {
 			  zD = dateFormat.parse(aD);
-			  airline.setArrivalDate(new java.sql.Date(zD.getTime()));
+			  user.setArrivalDate(new java.sql.Date(zD.getTime()));
 		  } catch (ParseException e) {
 			  System.out.println(e);
 		  }
@@ -59,41 +59,38 @@ public class Controller extends HttpServlet {
 		  Date zT;
 		  try {			  
 			  zT = timeFormat.parse(aT);
-			  airline.setArrivalTime(new java.sql.Time(zT.getTime()));
+			  user.setArrivalTime(new java.sql.Time(zT.getTime()));
 		  } catch (ParseException e) {
 			  System.out.println(e);
 		  }
 		  		
-		  airline.setFlightNumber(request.getParameter("flightNumber"));
+		  user.setFlightNumber(request.getParameter("flightNumber"));
 		  int terminal = Integer.parseInt(request.getParameter("flightArrivalTerminal"));
-		  airline.setTerminal(terminal);
-		  
-		String msgAirline = new String();
-		dao.addAirline(airline, msgAirline);
-
-		AirlineInfo user = new AirlineInfo();
+		  user.setTerminal(terminal);
 
 		  user.setFirstName(request.getParameter("firstName"));
 		  user.setLastName(request.getParameter("lastName"));
 		  user.setInitDate(new Date());
 		  user.setEmail(request.getParameter("email"));
+		  user.setPhone(request.getParameter("phone"));
 		  user.setQQ(request.getParameter("qq"));
+		  user.setQQ_name(request.getParameter("qq_name"));
 		  int sbuid = Integer.parseInt(request.getParameter("studentId"));
-		  user.setSbuId(sbuid);
+		  user.setSbuId(sbuid);		  
 		  
 		String msgUser = new String();
 		dao.addUser(user, msgUser);
 		
-		String nextPageOfDone = "";
-		String nextPageOfFailed = "";		
-		RequestDispatcher dispatcher = null;
+//		String nextPageOfDone = "";
+//		String nextPageOfFailed = "";		
+//		RequestDispatcher dispatcher = null;
 		
-		if (msgUser == "Done" && msgAirline == "Done") {
-			dispatcher = getServletContext().getRequestDispatcher(nextPageOfDone);
-		} else {
-			dispatcher = getServletContext().getRequestDispatcher(nextPageOfFailed);
-		}
-		dispatcher.forward(request, response);
+//		if (msgUser == "Done") {
+//			dispatcher = getServletContext().getRequestDispatcher(nextPageOfDone);
+//		} else {
+//			dispatcher = getServletContext().getRequestDispatcher(nextPageOfFailed);
+//		}
+//		dispatcher.forward(request, response);
 	}
 
 }

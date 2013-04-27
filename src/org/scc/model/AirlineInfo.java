@@ -21,7 +21,7 @@ public class AirlineInfo {
 	private String QQ_name;
 	private int major_id;
 	private String email;
-	private int sbuId;	
+	private int sbuId;
 	
 	public int getUserId() {
 		return userId;

@@ -21,11 +21,24 @@ public class UserDao {
 	public void addUser(AirlineInfo info, String message) {		
 		try {
 			PreparedStatement preparedStatement = connection.
-					prepareStatement("insert into new_student(first_name, last_name, Email) value (?, ?, ?)");
+					prepareStatement("insert into new_student" +
+							         "(first_name, last_name, Email, Phone, Arrival_Date," +
+							         "Arrival_Time, Flight_Number, Terminal, " +
+							         "Student_Id, QQ, QQ_Name)" +
+							         "value (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			preparedStatement.setString(1, info.getFirstName());
 			preparedStatement.setString(2, info.getLastName());
 			preparedStatement.setString(3, info.getEmail());
-			
+			preparedStatement.setString(4, info.getPhone());
+			preparedStatement.setDate(5, info.getArrivalDate());
+			preparedStatement.setTime(6, info.getArrivalTime());
+			preparedStatement.setString(7, info.getFlightNumber());
+			preparedStatement.setInt(8, info.getTerminal());
+			preparedStatement.setInt(9, info.getSbuId());
+			/*major id*/
+			preparedStatement.setString(10, info.getQQ());
+			preparedStatement.setString(11, info.getQQ_name());
+
 			preparedStatement.executeUpdate();
 			message="Done";
 		} catch (SQLException e) {
@@ -34,25 +47,7 @@ public class UserDao {
 		}
 	}
 	
-	public void addAirline(AirlineInfo info, String message) {
-		try {
-			PreparedStatement preparedStatement = connection.
-					prepareStatement("insert into airline(Arrival_Date, Arrival_Time, Flight_Number, Terminal) value (?, ?, ?, ?)");
-			preparedStatement.setDate(1, info.getArrivalDate());
-			preparedStatement.setTime(2, info.getArrivalTime());
-			preparedStatement.setString(3, info.getFlightNumber());
-			preparedStatement.setInt(4, info.getTerminal());
-			
-			preparedStatement.executeUpdate();
-			message="Done";
-		} catch (SQLException e) {
-            System.out.println(e);
-            message="Failed";
-		}
-	}
-
 	public List<AirlineInfo> getUsersByDate (java.sql.Date date) {
-
 
 		List<AirlineInfo> users = new ArrayList<AirlineInfo>();
 
@@ -77,7 +72,7 @@ public class UserDao {
 		     user.setLastName(res.getString("Last_Name"));
 		     user.setEmail(res.getString("Email"));
 		     user.setPhone(res.getString("Phone"));
-		     user.setArrivalDate(res.getDate("Arrival_Date"));/**/
+		     user.setArrivalDate(res.getDate("Arrival_Date"));
 		     user.setFlightNumber(res.getString("Flight_Number"));
 		     user.setArrivalTime(res.getTime("Arrival_Time"));
 		     user.setTerminal(res.getInt("Terminal"));
