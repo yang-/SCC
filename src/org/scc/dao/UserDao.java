@@ -45,4 +45,16 @@ public class UserDao {
 		}
 	}
 
+	public Airline getUsersByDate (Airline airline) {
+		try{
+			PreparedStatement preparedStatement = connection.
+					prepareStatement("select * from airline where Arrival_Date = '?'");
+			preparedStatement.setDate(1, airline.getArrivalDate());
+			
+			ResultSet res;
+			res = preparedStatement.executeQuery();
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+	}
 }
