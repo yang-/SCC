@@ -40,7 +40,7 @@ public class Search extends HttpServlet {
 		String para = request.getParameter("show");
 		
 		if (para == "date") {
-			
+			dao.getUsersByDate();
 		}
 	}
 

@@ -13,8 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.scc.dao.UserDao;
-import org.scc.model.Airline;
-import org.scc.model.User;
+import org.scc.model.AirlineInfo;
 
 /**
  * Servlet implementation class Controller
@@ -44,7 +43,7 @@ public class Controller extends HttpServlet {
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		
-		Airline airline = new Airline();
+		AirlineInfo airline = new AirlineInfo();
 		
 		  String aD = request.getParameter("flightDate");
 		  String aT = request.getParameter("flightArrivalTime");
@@ -72,7 +71,7 @@ public class Controller extends HttpServlet {
 		String msgAirline = new String();
 		dao.addAirline(airline, msgAirline);
 
-		User user = new User();
+		AirlineInfo user = new AirlineInfo();
 		
 		  user.setAirlineId(airline.getId());
 		  user.setFirstName(request.getParameter("firstName"));

@@ -4,8 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import org.scc.model.Airline;
-import org.scc.model.User;
+import org.scc.model.AirlineInfo;
 import org.scc.util.DbUtil;
 
 public class UserDao {
@@ -16,13 +15,13 @@ public class UserDao {
 		connection = DbUtil.getConnection();
 	}
 	
-	public void addUser(User user, String message) {		
+	public void addUser(AirlineInfo info, String message) {		
 		try {
 			PreparedStatement preparedStatement = connection.
 					prepareStatement("insert into new_student(first_name, last_name, Email) value (?, ?, ?)");
-			preparedStatement.setString(1, user.getFirstName());
-			preparedStatement.setString(2, user.getLastName());
-			preparedStatement.setString(3, user.getEmail());
+			preparedStatement.setString(1, info.getFirstName());
+			preparedStatement.setString(2, info.getLastName());
+			preparedStatement.setString(3, info.getEmail());
 			
 			preparedStatement.executeUpdate();
 			message="Done";
@@ -32,14 +31,14 @@ public class UserDao {
 		}
 	}
 	
-	public void addAirline(Airline airline, String message) {
+	public void addAirline(AirlineInfo info, String message) {
 		try {
 			PreparedStatement preparedStatement = connection.
 					prepareStatement("insert into airline(Arrival_Date, Arrival_Time, Flight_Number, Terminal) value (?, ?, ?, ?)");
-			preparedStatement.setDate(1, airline.getArrivalDate());
-			preparedStatement.setTime(2, airline.getArrivalTime());
-			preparedStatement.setString(3, airline.getFlightNumber());
-			preparedStatement.setInt(4, airline.getTerminal());
+			preparedStatement.setDate(1, info.getArrivalDate());
+			preparedStatement.setTime(2, info.getArrivalTime());
+			preparedStatement.setString(3, info.getFlightNumber());
+			preparedStatement.setInt(4, info.getTerminal());
 			
 			preparedStatement.executeUpdate();
 			message="Done";
@@ -49,4 +48,16 @@ public class UserDao {
 		}
 	}
 
+	public Airline getUsersByDate (Airline airline) {
+		try{
+			PreparedStatement preparedStatement = connection.
+					prepareStatement("select * from airline where Arrival_Date = '?'");
+			preparedStatement.setDate(1, airline.getArrivalDate());
+			
+			ResultSet res;
+			res = preparedStatement.executeQuery();
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+	}
 }
