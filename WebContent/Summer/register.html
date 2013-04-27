@@ -6,8 +6,11 @@
 <meta name="keywords" content="keywords"/> 
 <meta name="author" content="author"/> 
 <link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="register.css">
+<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/south-street/jquery-ui.css">
 <title>2013年新生接机报名 Register for Airport Pick-up 2013 - 施福基督教会 Suffolk Christian Church | 校园团契 Campus Fellowship</title>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <script src="register.js"></script>
 </head>
 <body>
@@ -29,118 +32,210 @@
 	<div class="content">
 
 		<h1>2013年新生接机报名</h1>
-		<form action="" method="post">
-				<p>* Required</p>
-				<div class="form-basicInfo">
-					<h2>基本信息</h2>
-					<p><label for="form-lastName">姓: </label>
-					<input type="text" name="lastName" id="form-lastName" placeholder="Last name"><span class="ss-required-asterisk">*</span></p>
-					<p><label for="form-firstName">名: </label>
-					<input type="text" name="firstName" id="form-firstName" placeholder="First name">
-					<span class="ss-required-asterisk">*</span></p>
-					<p><label for="form-email">邮箱: </label>
-					<input type="email" name="email" id="form-email" placeholder="Email"><span class="ss-required-asterisk">*</span></p>
-					<p><label for="form-emergencyContact">国内紧急联系电话: </label>
-					<input type="text" name="emergencyContact" id="form-emergencyContact" placeholder="Emergency contact" onkeyup= "value=value.replace(/[^\d]/g, '')">
-					<span class="ss-required-asterisk">*</span></p>
-				</div>
-				<div class="divider"></div>
-				<div class="form-flightInfo">
-					<h2>航班信息</h2>
-					<p><label for="form-flightDate">到达日期: </label>
-					<input type="text" name="flightDate" id="form-flightDate" placeholder="Flight date">
-					<span class="ss-required-asterisk">*</span></p>
-					<p><label for="form-flightNumber">航班号: </label>
-					<input type="text" name="flightNumber" id="form-flightNumber" style="text-transform:uppercase" placeholder="Flight number">
-					<span class="ss-required-asterisk">*</span></p>
-					<p><label for="form-flightArrivalTime">到达时间: </label>
-					<input type="text" name="flightArrivalTime" id="form-flightArrivalTime" placeholder="Arrival time">
-					<span class="ss-required-asterisk">*</span></p>
-					<p><label for="form-flightArrivalTerminal">到达航站楼: </label>
-					<input type="text" name="flightArrivalTerminal" id="form-flightArrivalTerminal" placeholder="Arrival terminal">
-					<span class="ss-required-asterisk">*</span></p>
-				</div>
-				<div class="divider"></div>
-				<div class="form-stonyBrookInfo">
-					<h2>石溪信息</h2>
-					
-					<p><label for="form-destination">宿舍或校外住址: </label>
-					<select name="destination" id="form-destination" onchange="formDestinationChange(this.value)">
-						<option value="chapin">Chapin</option>
-						<option value="west">Schomburg or West</option>
-						<option value="other">校外或其他</option>
-					</select>
-					<span class="ss-required-asterisk">*</span>
-					<div id="offCampus" style="display: none;">
-					<label for="form-offCampus" id="form-label-offCampus">校外住址: </label>
-					<input type="text" name="offCampus" id="form-offCampus" placeholder="Off campus address">
-					<span class="ss-required-asterisk">*</span>
-					</p></div>
-					<p><label for="form-studentId">学号: </label>
-					<input type="text" name="studentId" id="form-studentId" placeholder="Student ID"></p>
-					<p><label for="form-major">专业: </label>
-					<select name="major" id="form-major">
-						<option value="0" selected>Select a program:</option>
-						<option value="UND">本科生未分专业</option>
-						<option value="AFH">Africana Studies</option>
-						<option value="ANT">Anthropology</option>
-						<option value="AMS">Applied Mathematics</option>
-						<option value="ARH">Art History</option>
-						<option value="ARS">Art - Studio</option>
-						<option value="BCB">Biochem &amp; Cell Biology</option>
-						<option value="BME">Biomedical Engineering</option>
-						<option value="MBA">College of Business</option>
-						<option value="CHE">Chemistry</option>
-						<option value="CLCS">Comparative Literary</option>
-						<option value="CSE">Computer Science</option>
-						<option value="CWL">Creative Writing &amp; Literature</option>
-						<option value="BEE">Ecology &amp; Evolution</option>
-						<option value="ESE">Electrical &amp; Computer Engg.</option>
-						<option value="EGL">English</option>
-						<option value="EURO">European Languages</option>
-						<option value="GEO">Geosciences</option>
-						<option value="GSS">Geospatial Science</option>
-						<option value="SPN">Hispanic Languages</option>
-						<option value="HIS">History</option>
-						<option value="ISE">Information Systems</option>
-						<option value="JRN">Journalism</option>
-						<option value="LIN">Linguistics</option>
-						<option value="MAS">Marine Sciences</option>
-						<option value="ESM">Materials Science</option>
-						<option value="MAT">Mathematics</option>
-						<option value="MEC">Mechanical Engg.</option>
-						<option value="MH">Medical Humanities</option>
-						<option value="MUS">Music</option>
-						<option value="HDO">Oral Biology</option>
-						<option value="PHI">Philosophy</option>
-						<option value="PHY">Physics &amp; Astronomy</option>
-						<option value="HBY">Physiology &amp; Biophysics</option>
-						<option value="POL">Political Science</option>	
-						<option value="publichealth">Public Health</option>	
-						<option value="PUB">Public Policy</option>
-						<option value="PSY">Psychology</option>
-						<option value="SOC">Sociology</option>
-						<option value="ARS">Studio Arts</option>
-						<option value="EST">Technology and Society</option>
-						<option value="THR">Theatre Arts</option>
-						<option value="THR2"> Theatre, MFA</option>
-						<option value="WST">Women's Studies</option>        
-						<option value="WRT">Writing and Rhetoric</option>
-						<option value="ohter">Others</option>
-					</select><span class="ss-required-asterisk">*</span></p>
-
-
-
-					<p><label for="form-qq">QQ: </label>
-					<input type="text" name="qq" id="form-qq" placeholder="QQ"><span class="ss-required-asterisk">*</span></p>
-					<p><label for="form-qqName">群名片: </label>
-					<input type="text" name="qqName" id="form-qqName" placeholder="QQ name"><span class="ss-required-asterisk">*</span></p>
-				</div>
-				
-				<p><input type="reset" value="reset"  onclick="formDestinationChange(this.value)">
-				<input type="submit" value="submit"></p>
-			</form>
-		
+		<form id="signUpForm" name="signUpForm" class="signUpForm" action="Controller" method="post" autocomplete="off">
+			<p>* Required</p>
+			<div class="form-basicInfo">
+				<h2>基本信息</h2>
+				<table class="basicInfo">
+					<tr id="lastNameRow">
+						<td class="leftCol">
+							<label for="form-lastName">姓 </label>
+							<span class="ss-required-asterisk">*</span>
+						</td>
+						<td class="rightCol">
+							<input type="text" name="lastName" id="form-lastName" placeholder="Last name" title="请输入真实姓名。" required>
+						</td>
+					</tr>
+					<tr id="firstNameRow">
+						<td class="leftCol">
+							<label for="form-firstName">名 </label>
+							<span class="ss-required-asterisk">*</span>
+						</td>
+						<td class="rightCol">
+							<input type="text" name="firstName" id="form-firstName" placeholder="First name" title="请输入真实姓名。" required>
+						</td>
+					</tr>
+					<tr id="emailRow">
+						<td class="leftCol">
+							<label for="form-email">邮箱 </label>
+							<span class="ss-required-asterisk">*</span>
+						</td>
+						<td class="rightCol">
+							<input type="email" name="email" id="form-email" placeholder="name@example.com" title="请输入常用邮箱。" required>
+						</td>
+					</tr>
+					<tr id="emergencyContactRow">
+						<td class="leftCol">
+							<label for="form-emergencyContact">国内紧急联系电话 </label>
+							<span class="ss-required-asterisk">*</span>
+						</td>
+						<td class="rightCol">
+							<input type="text" name="emergencyContact" id="form-emergencyContact" placeholder="Emergency contact" title="请输入国内紧急联系电话。" required>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="divider"></div>
+			<div class="form-flightInfo">
+				<h2>航班信息</h2>
+				<table class="flightInfo">
+					<tr id="flightDateRow">
+						<td class="leftCol">
+							<label for="form-flightDate">到达日期 </label>
+							<span class="ss-required-asterisk">*</span>
+						</td>
+						<td class="rightCol">
+							<input type="text" name="flightDate" id="form-flightDate" placeholder="Flight date" style="cursor: pointer;" readonly title="请输入你的到达日期（美国东部时间）。" required>
+						</td>
+					</tr>
+					<tr id="flightArrivalTimeRow">
+						<td class="leftCol">
+							<label for="form-flightArrivalTime">到达时间 </label>
+							<span class="ss-required-asterisk">*</span>
+						</td>
+						<td class="rightCol">
+							<input type="text" name="flightArrivalTime" id="form-flightArrivalTime" placeholder="HH:MM" title="请输入你乘坐航班的到达时间（美国东部时间）">
+						</td>
+					</tr>
+					<tr id="flightNumberRow">
+						<td class="leftCol">
+							<label for="form-flightNumber">航班号 </label>
+							<span class="ss-required-asterisk">*</span>
+						</td>
+						<td class="rightCol">
+							<input type="text" name="flightNumber" id="form-flightNumber" style="text-transform:uppercase" placeholder="Flight number"  title="请输入你乘坐航班的航班号" required>
+						</td>
+					</tr>
+					<tr id="flightArrivalTerminalRow">
+						<td class="leftCol">
+							<label for="form-flightArrivalTerminal">到达航站楼 </label>
+							<span class="ss-required-asterisk">*</span>
+						</td>
+						<td class="rightCol">
+							<input type="text" name="flightArrivalTerminal" id="form-flightArrivalTerminal" placeholder="Arrival terminal"  title="请输入你乘坐航班的到达航站楼。" required>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="divider"></div>
+			<div class="form-stonyBrookInfo">
+				<h2>石溪信息</h2>
+				<table class="stonyBrookInfo">
+					<tr id="destinationRow">
+						<td class="leftCol">
+							<label for="form-destination">宿舍或校外住址 </label>
+							<span class="ss-required-asterisk">*</span>
+						</td>
+						<td class="rightCol">
+							<select name="destination" id="form-destination" onchange="formDestinationChange(this.value)" title="请选择你在石溪的住址。">
+								<option value="chapin">Chapin</option>
+								<option value="west">Schomburg or West</option>
+								<option value="other">校外或其他</option>
+							</select>
+						</td>
+					</tr>
+					<tr id="offCampusRow">
+						<td class="leftCol">
+							<label for="form-offCampus" id="form-label-offCampus" class="offCampus">校外住址 </label>
+							<span class="ss-required-asterisk offCampus">*</span>
+						</td>
+						<td class="rightCol">
+							<input type="text" name="offCampus" id="form-offCampus" placeholder="Off campus address" class="offCampus" title="请输入你在石溪的校外住址。" required>
+						</td>
+					</tr>
+					<tr id="studentIdRow">
+						<td class="leftCol">
+							<label for="form-studentId">学号 </label>
+							<span class="ss-required-asterisk">*</span>
+						</td>
+						<td class="rightCol">
+							<input type="text" name="studentId" id="form-studentId" placeholder="Student ID" title="请输入你的学号。" required>
+						</td>
+					</tr>
+					<tr id="majorRow">
+						<td class="leftCol">
+							<label for="form-major">专业 </label>
+							<span class="ss-required-asterisk">*</span>
+						</td>
+						<td class="rightCol">
+							<select name="major" id="form-major" title="请选择你的专业。">
+								<option value="0" selected>Select a program:</option>
+								<option value="UND">本科生未分专业</option>
+								<option value="AFH">Africana Studies</option>
+								<option value="ANT">Anthropology</option>
+								<option value="AMS">Applied Mathematics</option>
+								<option value="ARH">Art History</option>
+								<option value="ARS">Art - Studio</option>
+								<option value="BCB">Biochem &amp; Cell Biology</option>
+								<option value="BME">Biomedical Engineering</option>
+								<option value="MBA">College of Business</option>
+								<option value="CHE">Chemistry</option>
+								<option value="CLCS">Comparative Literary</option>
+								<option value="CSE">Computer Science</option>
+								<option value="CWL">Creative Writing &amp; Literature</option>
+								<option value="BEE">Ecology &amp; Evolution</option>
+								<option value="ESE">Electrical &amp; Computer Engg.</option>
+								<option value="EGL">English</option>
+								<option value="EURO">European Languages</option>
+								<option value="GEO">Geosciences</option>
+								<option value="GSS">Geospatial Science</option>
+								<option value="SPN">Hispanic Languages</option>
+								<option value="HIS">History</option>
+								<option value="ISE">Information Systems</option>
+								<option value="JRN">Journalism</option>
+								<option value="LIN">Linguistics</option>
+								<option value="MAS">Marine Sciences</option>
+								<option value="ESM">Materials Science</option>
+								<option value="MAT">Mathematics</option>
+								<option value="MEC">Mechanical Engg.</option>
+								<option value="MH">Medical Humanities</option>
+								<option value="MUS">Music</option>
+								<option value="HDO">Oral Biology</option>
+								<option value="PHI">Philosophy</option>
+								<option value="PHY">Physics &amp; Astronomy</option>
+								<option value="HBY">Physiology &amp; Biophysics</option>
+								<option value="POL">Political Science</option>	
+								<option value="publichealth">Public Health</option>	
+								<option value="PUB">Public Policy</option>
+								<option value="PSY">Psychology</option>
+								<option value="SOC">Sociology</option>
+								<option value="ARS">Studio Arts</option>
+								<option value="EST">Technology and Society</option>
+								<option value="THR">Theatre Arts</option>
+								<option value="THR2"> Theatre, MFA</option>
+								<option value="WST">Women's Studies</option>        
+								<option value="WRT">Writing and Rhetoric</option>
+								<option value="ohter">Others</option>
+							</select>
+						</td>
+					</tr>
+					<tr id="qqRow">
+						<td class="leftCol">
+							<label for="form-qq">QQ </label>
+							<span class="ss-required-asterisk">*</span>
+						</td>
+						<td class="rightCol">
+							<input type="text" name="qq" id="form-qq" placeholder="QQ" title="请输入你的QQ号。" required>
+						</td>
+					</tr>
+					<tr id="qqNameRow">
+						<td class="leftCol">
+							<label for="form-qqName">群名片 </label>
+							<span class="ss-required-asterisk">*</span>
+						</td>
+						<td class="rightCol">
+							<input type="text" name="qqName" id="form-qqName" placeholder="QQ name" title="请输入你的QQ接机群群名片。" required>
+						</td>
+					</tr>
+					<tr>
+						<td class="rightCol" colspan="2">
+							<input id="btnReset" class="button" type="reset" value="reset"  onclick="formDestinationChange(this.value)">
+							<input id="btnSubmit" class="button" type="submit" value="submit">
+						</td>
+					</tr>
+				</table>
+			</div>
+		</form>
 	</div>
 
 	<div class="footer">
