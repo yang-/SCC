@@ -23,6 +23,13 @@ public class AirlineInfo {
 	private String email;
 	private int sbuId;
 	
+	private static String[] majorList = {"0","UND","AFH","ANT","AMS","ARH","ARS","BCB","BME",
+		                                 "MBA","CHE","CLCS","CSE","CWL","BEE","ESE","EGL","EURO",
+		                                 "GEO","GSS","SPN","HIS","ISE","JRN","LIN","MAS","ESM",
+		                                 "MAT","MEC","MH","MUS","HDO","PHI","PHY","HBY","POL",
+		                                 "publichealth","PUB","PSY","SOC","ARS","EST","THR","THR2",
+		                                 "WST","WRT","ohter"};
+	
 	public int getUserId() {
 		return userId;
 	}
