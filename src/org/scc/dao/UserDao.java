@@ -21,11 +21,11 @@ public class UserDao {
 	public void addUser(AirlineInfo info, String message) {		
 		try {
 			PreparedStatement preparedStatement = connection.
-					prepareStatement("insert into new_student" +
+					prepareStatement("insert into New_Student" +
 							         "(first_name, last_name, Email, Phone, Arrival_Date," +
 							         "Arrival_Time, Flight_Number, Terminal, " +
-							         "Student_Id, QQ, QQ_Name)" +
-							         "value (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+							         "Student_Id, QQ, QQ_Name, Major_id)" +
+							         "value (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			preparedStatement.setString(1, info.getFirstName());
 			preparedStatement.setString(2, info.getLastName());
 			preparedStatement.setString(3, info.getEmail());
@@ -35,9 +35,9 @@ public class UserDao {
 			preparedStatement.setString(7, info.getFlightNumber());
 			preparedStatement.setInt(8, info.getTerminal());
 			preparedStatement.setInt(9, info.getSbuId());
-			/*major id*/
 			preparedStatement.setString(10, info.getQQ());
 			preparedStatement.setString(11, info.getQQ_name());
+			preparedStatement.setInt(12, info.getMajor_id());
 
 			preparedStatement.executeUpdate();
 			message="Done";

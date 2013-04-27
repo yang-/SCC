@@ -76,7 +76,8 @@ public class Controller extends HttpServlet {
 		  user.setQQ(request.getParameter("qq"));
 		  user.setQQ_name(request.getParameter("qq_name"));
 		  int sbuid = Integer.parseInt(request.getParameter("studentId"));
-		  user.setSbuId(sbuid);		  
+		  user.setSbuId(sbuid);		
+		  user.setMajor_id(1);
 		  
 		String msgUser = new String();
 		dao.addUser(user, msgUser);
