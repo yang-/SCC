@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,7 +40,7 @@ public class Controller extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+				
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		
@@ -68,7 +69,8 @@ public class Controller extends HttpServlet {
 		  int terminal = Integer.parseInt(request.getParameter("flightArrivalTerminal"));
 		  airline.setTerminal(terminal);
 		  
-		dao.addAirline(airline);  
+		String msgAirline = new String();
+		dao.addAirline(airline, msgAirline);
 
 		User user = new User();
 		
@@ -81,7 +83,19 @@ public class Controller extends HttpServlet {
 		  int sbuid = Integer.parseInt(request.getParameter("studentId"));
 		  user.setSbuId(sbuid);
 		  
-		dao.addUser(user);
+		String msgUser = new String();
+		dao.addUser(user, msgUser);
+		
+		String nextPageOfDone = "";
+		String nextPageOfFailed = "";		
+		RequestDispatcher dispatcher = null;
+		
+		if (msgUser == "Done" && msgAirline == "Done") {
+			dispatcher = getServletContext().getRequestDispatcher(nextPageOfDone);
+		} else {
+			dispatcher = getServletContext().getRequestDispatcher(nextPageOfFailed);
+		}
+		dispatcher.forward(request, response);
 	}
 
 }

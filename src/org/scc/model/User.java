@@ -8,7 +8,7 @@ public class User {
 	private String lastName;
 	private String gender;
 	private Date initDate;
-	private java.sql.Date DOB;
+	private java.sql.Date DOB; 
 	private String QQ;
 	private String email;
 	private int airlineId;

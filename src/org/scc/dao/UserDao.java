@@ -16,7 +16,7 @@ public class UserDao {
 		connection = DbUtil.getConnection();
 	}
 	
-	public void addUser(User user) {		
+	public void addUser(User user, String message) {		
 		try {
 			PreparedStatement preparedStatement = connection.
 					prepareStatement("insert into new_student(first_name, last_name, Email) value (?, ?, ?)");
@@ -25,12 +25,14 @@ public class UserDao {
 			preparedStatement.setString(3, user.getEmail());
 			
 			preparedStatement.executeUpdate();
+			message="Done";
 		} catch (SQLException e) {
-            System.out.println(e);
+			System.out.println(e);
+            message="Failed";
 		}
 	}
 	
-	public void addAirline(Airline airline) {
+	public void addAirline(Airline airline, String message) {
 		try {
 			PreparedStatement preparedStatement = connection.
 					prepareStatement("insert into airline(Arrival_Date, Arrival_Time, Flight_Number, Terminal) value (?, ?, ?, ?)");
@@ -40,8 +42,10 @@ public class UserDao {
 			preparedStatement.setInt(4, airline.getTerminal());
 			
 			preparedStatement.executeUpdate();
+			message="Done";
 		} catch (SQLException e) {
             System.out.println(e);
+            message="Failed";
 		}
 	}
 
