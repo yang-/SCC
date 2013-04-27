@@ -72,8 +72,7 @@ public class Controller extends HttpServlet {
 		dao.addAirline(airline, msgAirline);
 
 		AirlineInfo user = new AirlineInfo();
-		
-		  user.setAirlineId(airline.getId());
+
 		  user.setFirstName(request.getParameter("firstName"));
 		  user.setLastName(request.getParameter("lastName"));
 		  user.setInitDate(new Date());

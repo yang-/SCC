@@ -2,7 +2,10 @@ package org.scc.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.scc.model.AirlineInfo;
 import org.scc.util.DbUtil;
@@ -48,16 +51,48 @@ public class UserDao {
 		}
 	}
 
-	public Airline getUsersByDate (Airline airline) {
+	public List<AirlineInfo> getUsersByDate (java.sql.Date date) {
+
+
+		List<AirlineInfo> users = new ArrayList<AirlineInfo>();
+
 		try{
-			PreparedStatement preparedStatement = connection.
-					prepareStatement("select * from airline where Arrival_Date = '?'");
-			preparedStatement.setDate(1, airline.getArrivalDate());
-			
-			ResultSet res;
-			res = preparedStatement.executeQuery();
+
+        // Search By Date Query Statement
+	       PreparedStatement preparedStatement = connection.
+           prepareStatement("SELECT * FROM New_Student WHERE Arrival_Date = '?'");
+		   preparedStatement.setDate(1, date);
+
+		   ResultSet res;
+		   res = preparedStatement.executeQuery();
+
+		// retrieve results
+
+		  while(res.next()) {
+
+		     AirlineInfo user = new AirlineInfo();
+
+		     user.setUserId(res.getInt("ID"));
+		     user.setFirstName(res.getString("First_Name"));
+		     user.setLastName(res.getString("Last_Name"));
+		     user.setEmail(res.getString("Email"));
+		     user.setPhone(res.getString("Phone"));
+		     user.setArrivalDate(res.getDate("Arrival_Date"));/**/
+		     user.setFlightNumber(res.getString("Flight_Number"));
+		     user.setArrivalTime(res.getTime("Arrival_Time"));
+		     user.setTerminal(res.getInt("Terminal"));
+		     user.setSbuId(res.getInt("Student_Id"));
+		     user.setMajor_id(res.getInt("Major_Id"));
+		     user.setQQ(res.getString("QQ"));
+		     user.setQQ_name(res.getString("QQ_Name"));
+		     users.add(user);
+
+		  }
+		  return users;
+
 		} catch (SQLException e) {
-			System.out.println(e);
+		   System.out.println(e);
+		   return null;
 		}
 	}
 }
