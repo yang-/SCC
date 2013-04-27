@@ -155,5 +155,24 @@ public class AirlineInfo {
 	public void setTerminal(int terminal) {
 		this.terminal = terminal;
 	}
+	
+	private String destination;
+	private String offCampusRow;
 
+	public String getDestination() {
+		return destination;
+	}
+
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+
+	public String getOffCampusRow() {
+		return offCampusRow;
+	}
+
+	public void setOffCampusRow(String offCampusRow) {
+		this.offCampusRow = offCampusRow;
+	}
+	
 }

@@ -79,6 +79,10 @@ public class Controller extends HttpServlet {
 		  user.setSbuId(sbuid);		
 		  user.setMajor_id(request.getParameter("major"));
 		  
+		  String des = request.getParameter("destination");
+		  user.setDestination(des);
+		  if (des.equals("other")) user.setOffCampusRow(request.getParameter("offCampus"));
+		  
 		String msgUser = new String();
 		dao.addUser(user, msgUser);
 		
