@@ -72,9 +72,9 @@ public class Controller extends HttpServlet {
 		  user.setLastName(request.getParameter("lastName"));
 		  user.setInitDate(new Date());
 		  user.setEmail(request.getParameter("email"));
-		  user.setPhone(request.getParameter("phone"));
+		  user.setPhone(request.getParameter("emergencyContact"));
 		  user.setQQ(request.getParameter("qq"));
-		  user.setQQ_name(request.getParameter("qq_name"));
+		  user.setQQ_name(request.getParameter("qqName"));
 		  int sbuid = Integer.parseInt(request.getParameter("studentId"));
 		  user.setSbuId(sbuid);		
 		  user.setMajor_id(1);
