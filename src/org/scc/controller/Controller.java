@@ -18,84 +18,107 @@ import org.scc.model.AirlineInfo;
 /**
  * Servlet implementation class Controller
  */
-@WebServlet("/Controller")
+@WebServlet("/Register")
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private UserDao dao;
-	
-    public Controller() {
-    	super();
-    	dao = new UserDao();
-    }
+	private static String SUCCESS = "/done.html";
+    private static String FAIL = "/error.jsp";
+	private UserDao dao;
+
+	public Controller() {
+		super();
+		dao = new UserDao();
+	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		String forward="";
+		
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-		
-		AirlineInfo user = new AirlineInfo();
-		
-		  String aD = request.getParameter("flightDate");
-		  String aT = request.getParameter("flightArrivalTime");
-		  
-		  Date zD;
-		  try {
-			  zD = dateFormat.parse(aD);
-			  user.setArrivalDate(new java.sql.Date(zD.getTime()));
-		  } catch (ParseException e) {
-			  System.out.println(e);
-		  }
-		  
-		  Date zT;
-		  try {			  
-			  zT = timeFormat.parse(aT);
-			  user.setArrivalTime(new java.sql.Time(zT.getTime()));
-		  } catch (ParseException e) {
-			  System.out.println(e);
-		  }
-		  		
-		  user.setFlightNumber(request.getParameter("flightNumber"));
-		  int terminal = Integer.parseInt(request.getParameter("flightArrivalTerminal"));
-		  user.setTerminal(terminal);
 
-		  user.setFirstName(request.getParameter("firstName"));
-		  user.setLastName(request.getParameter("lastName"));
-		  user.setInitDate(new Date());
-		  user.setEmail(request.getParameter("email"));
-		  user.setPhone(request.getParameter("emergencyContact"));
-		  user.setQQ(request.getParameter("qq"));
-		  user.setQQ_name(request.getParameter("qqName"));
-		  int sbuid = Integer.parseInt(request.getParameter("studentId"));
-		  user.setSbuId(sbuid);		
-		  user.setMajor_id(request.getParameter("major"));
-		  
-		  String des = request.getParameter("destination");
-		  user.setDestination(des);
-		  if (des.equals("other")) user.setOffCampusRow(request.getParameter("offCampus"));
-		  
-		String msgUser = new String();
-		dao.addUser(user, msgUser);
+		AirlineInfo user = new AirlineInfo();
+
+		String aD = request.getParameter("flightDate");
+		String aT = request.getParameter("flightArrivalTime");
+
+		Date zD;
+		try {
+			zD = dateFormat.parse(aD);
+			user.setArrivalDate(new java.sql.Date(zD.getTime()));
+		} catch (ParseException e) {
+			System.out.println(e);
+		}
+
+		Date zT;
+		try {
+			zT = timeFormat.parse(aT);
+			user.setArrivalTime(new java.sql.Time(zT.getTime()));
+		} catch (ParseException e) {
+			System.out.println(e);
+		}
+
+		user.setFlightNumber(request.getParameter("flightNumber"));
+		int terminal = Integer.parseInt(request
+				.getParameter("flightArrivalTerminal"));
+		user.setTerminal(terminal);
+
+//		user.setFirstName(request.getParameter("firstName"));
+//		user.setLastName(request.getParameter("lastName"));
 		
-//		String nextPageOfDone = "";
-//		String nextPageOfFailed = "";		
-//		RequestDispatcher dispatcher = null;
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		firstName = new String(firstName.getBytes("ISO-8859-1"),"UTF-8");
+		lastName = new String(lastName.getBytes("ISO-8859-1"),"UTF-8");
+		user.setFirstName(firstName);
+		user.setLastName(lastName);
 		
-//		if (msgUser == "Done") {
-//			dispatcher = getServletContext().getRequestDispatcher(nextPageOfDone);
-//		} else {
-//			dispatcher = getServletContext().getRequestDispatcher(nextPageOfFailed);
-//		}
-//		dispatcher.forward(request, response);
+		user.setInitDate(new Date());
+		user.setEmail(request.getParameter("email"));
+		user.setPhone(request.getParameter("emergencyContact"));
+		user.setQQ(request.getParameter("qq"));
+		user.setQQ_name(request.getParameter("qqName"));
+		int sbuid = Integer.parseInt(request.getParameter("studentId"));
+		user.setSbuId(sbuid);
+		user.setMajor_id(request.getParameter("major"));
+
+		String des = request.getParameter("destination");
+		user.setDestination(des);
+		if (des.equals("other"))
+			user.setOffCampusRow(request.getParameter("offCampus"));
+		else
+			user.setOffCampusRow(null);
+
+		String memo = request.getParameter("memo");
+		if(memo != null){
+			memo = new String(memo.getBytes("ISO-8859-1"),"UTF-8");
+			user.setMemo(memo);
+		} else {
+			user.setMemo(null);
+		}
+
+		if (dao.addUser(user)) {
+			forward = SUCCESS;
+		} else {
+			forward = FAIL;
+		}
+		RequestDispatcher view = request.getRequestDispatcher(forward);
+        view.forward(request, response);
+//		response.sendRedirect(forward);
 	}
 
 }

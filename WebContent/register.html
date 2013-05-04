@@ -11,6 +11,7 @@
 <title>2013年新生接机报名 Register for Airport Pick-up 2013 - 施福基督教会 Suffolk Christian Church | 校园团契 Campus Fellowship</title>
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<script src="jquery.maskedinput.min.js"></script>
 <script src="register.js"></script>
 </head>
 <body>
@@ -32,7 +33,7 @@
 	<div class="content">
 
 		<h1>2013年新生接机报名</h1>
-		<form id="signUpForm" name="signUpForm" class="signUpForm" action="Controller" method="post" autocomplete="off">
+		<form id="signUpForm" name="signUpForm" class="signUpForm" action="Register" method="post" autocomplete="off">
 			<p>* Required</p>
 			<div class="form-basicInfo">
 				<h2>基本信息</h2>
@@ -52,7 +53,7 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="firstName" id="form-firstName" placeholder="First name" title="请输入真实姓名。" required>
+							<input type="text" name="firstName" id="form-firstName" placeholder="First name" title="请输入真实中文姓名。" required>
 						</td>
 					</tr>
 					<tr id="emailRow">
@@ -85,7 +86,7 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="flightDate" id="form-flightDate" placeholder="Flight date" style="cursor: pointer;" readonly title="请输入你的到达日期（美国东部时间）。" required>
+							<input type="text" name="flightDate" id="form-flightDate" placeholder="Flight date" style="cursor: pointer;" readonly title="请选择你的到达日期（美国东部时间）。" required>
 						</td>
 					</tr>
 					<tr id="flightArrivalTimeRow">
@@ -112,7 +113,7 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="flightArrivalTerminal" id="form-flightArrivalTerminal" placeholder="Arrival terminal"  title="请输入你乘坐航班的到达航站楼。" required>
+							<input type="text" name="flightArrivalTerminal" id="form-flightArrivalTerminal" placeholder="Arrival terminal"  title="请输入你乘坐航班到达JFK机场的航站楼。" required>
 						</td>
 					</tr>
 				</table>
@@ -225,6 +226,14 @@
 						</td>
 						<td class="rightCol">
 							<input type="text" name="qqName" id="form-qqName" placeholder="QQ name" title="请输入你的QQ接机群群名片。" required>
+						</td>
+					</tr>
+					<tr id="memoRow">
+						<td class="leftCol" valign="baseline">
+							<label for="form-memo">备注 </label>
+						</td>
+						<td class="rightCol">
+							<textarea name="memo" id="form-memo" form="signUpForm" placeholder="选填。请输入你的补充说明，如你的性别、体形、接机当天的着装、行李的数量等。" title="选填。请输入你的补充说明，如你的性别、体形、接机当天的着装、行李的数量等。" maxlength="500" rows="5" cols="44"></textarea>
 						</td>
 					</tr>
 					<tr>

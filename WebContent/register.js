@@ -6,6 +6,8 @@ $(function(){
 	var startDate = new Date(2013, 7, 1);
 	startDate = today.getTime()<startDate.getTime()?startDate:today;
 	$( "#form-flightDate" ).datepicker({ minDate: startDate, maxDate: new Date(2013, 8, 1) });
+
+	$("#form-flightArrivalTime").mask("99:99");
 });
 
 function formDestinationChange(select){

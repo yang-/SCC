@@ -18,14 +18,14 @@ public class UserDao {
 		connection = DbUtil.getConnection();
 	}
 	
-	public void addUser(AirlineInfo info, String message) {		
+	public boolean addUser(AirlineInfo info) {		
 		try {
 			PreparedStatement preparedStatement = connection.
 					prepareStatement("insert into New_Student" +
 							         "(first_name, last_name, Email, Phone, Arrival_Date," +
 							         "Arrival_Time, Flight_Number, Terminal, " +
-							         "Student_Id, QQ, QQ_Name, Major_id)" +
-							         "value (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+							         "Student_Id, QQ, QQ_Name, Major_id, Campus_Address, Off_Campus_Address, Note)" +
+							         "value (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			preparedStatement.setString(1, info.getFirstName());
 			preparedStatement.setString(2, info.getLastName());
 			preparedStatement.setString(3, info.getEmail());
@@ -38,12 +38,15 @@ public class UserDao {
 			preparedStatement.setString(10, info.getQQ());
 			preparedStatement.setString(11, info.getQQ_name());
 			preparedStatement.setInt(12, info.getMajor_id());
+			preparedStatement.setString(13, info.getDestination());
+			preparedStatement.setString(14, info.getOffCampusRow());
+			preparedStatement.setString(15, info.getMemo());
 
 			preparedStatement.executeUpdate();
-			message="Done";
+			return true;
 		} catch (SQLException e) {
 			System.out.println(e);
-            message="Failed";
+            return false;
 		}
 	}
 	
@@ -80,6 +83,7 @@ public class UserDao {
 		     user.setMajor_id(res.getInt("Major_Id"));
 		     user.setQQ(res.getString("QQ"));
 		     user.setQQ_name(res.getString("QQ_Name"));
+		     user.setMemo(res.getString("Memo"));
 		     users.add(user);
 
 		  }

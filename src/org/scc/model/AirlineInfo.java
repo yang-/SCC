@@ -23,6 +23,9 @@ public class AirlineInfo {
 	private int major_id;
 	private String email;
 	private int sbuId;
+	private String destination;
+	private String offCampusRow;
+	private String memo;
 	
 	private static String[] majorList = {"0","UND","AFH","ANT","AMS","ARH","ARS","BCB","BME",
 		                                 "MBA","CHE","CLCS","CSE","CWL","BEE","ESE","EGL","EURO",
@@ -156,9 +159,6 @@ public class AirlineInfo {
 		this.terminal = terminal;
 	}
 	
-	private String destination;
-	private String offCampusRow;
-
 	public String getDestination() {
 		return destination;
 	}
@@ -173,6 +173,14 @@ public class AirlineInfo {
 
 	public void setOffCampusRow(String offCampusRow) {
 		this.offCampusRow = offCampusRow;
+	}
+
+	public String getMemo() {
+		return memo;
+	}
+
+	public void setMemo(String memo) {
+		this.memo = memo;
 	}
 	
 }

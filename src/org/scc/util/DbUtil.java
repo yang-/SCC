@@ -25,7 +25,8 @@ public class DbUtil {
                 String user = prop.getProperty("user");
                 String password = prop.getProperty("password");
                 Class.forName(driver);
-                connection = DriverManager.getConnection(url, user, password);
+//                connection = DriverManager.getConnection(url, user, password);
+                connection = DriverManager.getConnection(url+"?user="+user+"&password="+password+"&useUnicode=true&characterEncoding=utf-8");
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (SQLException e) {
