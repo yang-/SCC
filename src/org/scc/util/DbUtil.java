@@ -17,24 +17,26 @@ public class DbUtil {
             return connection;
         else {
             try {
-                Properties prop = new Properties();
-                InputStream inputStream = DbUtil.class.getClassLoader().getResourceAsStream("/db.properties");
-                prop.load(inputStream);
-                String driver = prop.getProperty("driver");
-                String url = prop.getProperty("url");
-                String user = prop.getProperty("user");
-                String password = prop.getProperty("password");
-                Class.forName(driver);
+//                Properties prop = new Properties();
+//                InputStream inputStream = DbUtil.class.getClassLoader().getResourceAsStream("/db.properties");
+//                prop.load(inputStream);
+//                String driver = prop.getProperty("driver");
+//                String url = prop.getProperty("url");
+//                String user = prop.getProperty("user");
+//                String password = prop.getProperty("password");
+//                Class.forName(driver);
 //                connection = DriverManager.getConnection(url, user, password);
-                connection = DriverManager.getConnection(url+"?user="+user+"&password="+password+"&useUnicode=true&characterEncoding=utf-8");
+            	
+                Class.forName("com.mysql.jdbc.Driver");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost/SCC?user=root&password=Jesus&useUnicode=true&characterEncoding=utf-8");
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (SQLException e) {
                 e.printStackTrace();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
+//            } catch (FileNotFoundException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
             }
             return connection;
         }
