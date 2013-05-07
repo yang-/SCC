@@ -65,6 +65,11 @@ select {
 	width: 142px;
 }
 
+div#recaptcha_area {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 input#btnReset {
-	margin: 0 10px 0 100px;
+	margin: 0 10px 0 125px;
 }

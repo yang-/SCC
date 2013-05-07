@@ -12,6 +12,7 @@
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <script src="jquery.maskedinput.min.js"></script>
+<script src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
 <script src="register.js"></script>
 </head>
 <body>
@@ -44,7 +45,7 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="lastName" id="form-lastName" placeholder="Last name" title="请输入真实姓名。" required>
+							<input type="text" name="lastName" id="form-lastName" placeholder="Last name" title="请输入真实中文姓名。" required>
 						</td>
 					</tr>
 					<tr id="firstNameRow">
@@ -236,10 +237,16 @@
 							<textarea name="memo" id="form-memo" form="signUpForm" placeholder="选填。请输入你的补充说明，如你的性别、体形、接机当天的着装、行李的数量等。" title="选填。请输入你的补充说明，如你的性别、体形、接机当天的着装、行李的数量等。" maxlength="500" rows="5" cols="44"></textarea>
 						</td>
 					</tr>
+				</table>
+				<div class="divider captcha"></div>
+				<h2 class="captcha">验证信息</h2>
+				<div id="captchadiv"></div>
+				<table>
 					<tr>
 						<td class="rightCol" colspan="2">
-							<input id="btnReset" class="button" type="reset" value="reset"  onclick="formDestinationChange(this.value)">
-							<input id="btnSubmit" class="button" type="submit" value="submit">
+							<input id="btnReset" class="button" type="reset" value="Reset"  onclick="formDestinationChange(this.value)">
+							<input type="button" value="Verify" class="button captcha" onclick="verify()">
+							<input id="btnSubmit" class="button" type="submit" value="Submit"  style="display:none;">
 						</td>
 					</tr>
 				</table>
