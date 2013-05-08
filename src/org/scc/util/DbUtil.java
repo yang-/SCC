@@ -28,7 +28,7 @@ public class DbUtil {
 //                connection = DriverManager.getConnection(url, user, password);
             	
                 Class.forName("com.mysql.jdbc.Driver");
-                connection = DriverManager.getConnection("jdbc:mysql://localhost/SCC?user=root&password=Jesus&useUnicode=true&characterEncoding=utf-8");
+                connection = DriverManager.getConnection("jdbc:mysql://localhost/SCC?user=root&password=Jesus&useUnicode=true&characterEncoding=utf8");
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             } catch (SQLException e) {

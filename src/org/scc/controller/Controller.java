@@ -91,7 +91,9 @@ public class Controller extends HttpServlet {
 		user.setEmail(request.getParameter("email"));
 		user.setPhone(request.getParameter("emergencyContact"));
 		user.setQQ(request.getParameter("qq"));
-		user.setQQ_name(request.getParameter("qqName"));
+		String qqName = request.getParameter("qqName");
+		qqName = new String(qqName.getBytes("ISO-8859-1"),"UTF-8");
+		user.setQQ_name(qqName);
 		int sbuid = Integer.parseInt(request.getParameter("studentId"));
 		user.setSbuId(sbuid);
 		user.setMajor_id(request.getParameter("major"));
@@ -119,6 +121,7 @@ public class Controller extends HttpServlet {
 		RequestDispatcher view = request.getRequestDispatcher(forward);
         view.forward(request, response);
 //		response.sendRedirect(forward);
+//        System.out.println(lastName+firstName);
 	}
 
 }
