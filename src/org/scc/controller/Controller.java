@@ -23,11 +23,11 @@ public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static String SUCCESS = "/done.html";
     private static String FAIL = "/error.html";
-	private UserDao dao;
+//	private UserDao dao;
 
 	public Controller() {
 		super();
-		dao = new UserDao();
+//		dao = new UserDao();
 	}
 
 	/**
@@ -46,6 +46,7 @@ public class Controller extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
+		UserDao dao = new UserDao();
 		String forward="";
 		
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
