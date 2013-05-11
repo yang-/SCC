@@ -119,6 +119,8 @@ public class Controller extends HttpServlet {
 		} else {
 			forward = FAIL;
 		}
+		dao.closeConnection();
+		
 		RequestDispatcher view = request.getRequestDispatcher(forward);
         view.forward(request, response);
 //		response.sendRedirect(forward);
