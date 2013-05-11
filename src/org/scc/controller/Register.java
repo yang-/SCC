@@ -93,10 +93,10 @@ public class Register extends HttpServlet {
 		user.setQQ(request.getParameter("qq"));
 		String qqName = request.getParameter("qqName");
 		qqName = new String(qqName.getBytes("ISO-8859-1"),"UTF-8");
-		user.setQQ_name(qqName);
+		user.setQQName(qqName);
 		int sbuid = Integer.parseInt(request.getParameter("studentId"));
 		user.setSbuId(sbuid);
-		user.setMajor_id(request.getParameter("major"));
+		user.setMajorId(request.getParameter("major"));
 
 		String des = request.getParameter("destination");
 		user.setDestination(des);

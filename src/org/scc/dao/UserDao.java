@@ -52,8 +52,8 @@ public class UserDao {
 				preparedStatement.setInt(8, info.getTerminal());
 				preparedStatement.setInt(9, info.getSbuId());
 				preparedStatement.setString(10, info.getQQ());
-				preparedStatement.setString(11, info.getQQ_name());
-				preparedStatement.setInt(12, info.getMajor_id());
+				preparedStatement.setString(11, info.getQQName());
+				preparedStatement.setInt(12, info.getMajorId());
 				preparedStatement.setString(13, info.getDestination());
 				preparedStatement.setString(14, info.getOffCampusRow());
 				preparedStatement.setString(15, info.getMemo());
@@ -99,9 +99,9 @@ public class UserDao {
 				user.setArrivalTime(res.getTime("Arrival_Time"));
 				user.setTerminal(res.getInt("Terminal"));
 				user.setSbuId(res.getInt("Student_Id"));
-				user.setMajor_id(res.getInt("Major_Id"));
+				user.setMajorId(res.getInt("Major_id"));
 				user.setQQ(res.getString("QQ"));
-				user.setQQ_name(res.getString("QQ_Name"));
+				user.setQQName(res.getString("QQ_Name"));
 				user.setDestination(res.getString("Campus_Address"));
 				user.setOffCampusRow(res.getString("Off_Campus_Address"));
 				user.setMemo(res.getString("Memo"));
@@ -145,9 +145,9 @@ public class UserDao {
 				user.setArrivalTime(res.getTime("Arrival_Time"));
 				user.setTerminal(res.getInt("Terminal"));
 				user.setSbuId(res.getInt("Student_Id"));
-				user.setMajor_id(res.getInt("Major_Id"));
+				user.setMajorId(res.getInt("Major_id"));
 				user.setQQ(res.getString("QQ"));
-				user.setQQ_name(res.getString("QQ_Name"));
+				user.setQQName(res.getString("QQ_Name"));
 				user.setDestination(res.getString("Campus_Address"));
 				user.setOffCampusRow(res.getString("Off_Campus_Address"));
 				user.setMemo(res.getString("Memo"));
