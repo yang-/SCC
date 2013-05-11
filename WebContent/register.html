@@ -12,6 +12,7 @@
 <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 <script src="jquery.maskedinput.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
 <script src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
 <script src="register.js"></script>
 </head>
@@ -45,7 +46,7 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="lastName" id="form-lastName" placeholder="Last name" title="请输入真实中文姓名。" required>
+							<input type="text" name="lastName" id="form-lastName" placeholder="Last name" title="请输入真实中文姓名。">
 						</td>
 					</tr>
 					<tr id="firstNameRow">
@@ -54,7 +55,7 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="firstName" id="form-firstName" placeholder="First name" title="请输入真实中文姓名。" required>
+							<input type="text" name="firstName" id="form-firstName" placeholder="First name" title="请输入真实中文姓名。">
 						</td>
 					</tr>
 					<tr id="emailRow">
@@ -63,7 +64,7 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="email" name="email" id="form-email" placeholder="name@example.com" title="请输入常用邮箱。" required>
+							<input type="email" name="email" id="form-email" placeholder="name@example.com" title="请输入常用邮箱。">
 						</td>
 					</tr>
 					<tr id="emergencyContactRow">
@@ -72,7 +73,7 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="emergencyContact" id="form-emergencyContact" placeholder="Emergency contact" title="请输入国内紧急联系电话。" required>
+							<input type="text" name="emergencyContact" id="form-emergencyContact" placeholder="Emergency contact" title="请输入国内紧急联系电话。">
 						</td>
 					</tr>
 				</table>
@@ -87,12 +88,12 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="flightDate" id="form-flightDate" placeholder="Flight date" style="cursor: pointer;" readonly title="请选择你的到达日期（美国东部时间）。" required>
+							<input type="text" name="flightDate" id="form-flightDate" placeholder="Flight date" style="cursor: pointer;" readonly title="请选择你的到达日期（美国东部时间）。">
 						</td>
 					</tr>
 					<tr id="flightArrivalTimeRow">
 						<td class="leftCol">
-							<label for="form-flightArrivalTime">到达时间 </label>
+							<label for="form-flightArrivalTime">到达时间(24小时制) </label>
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
@@ -105,7 +106,7 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="flightNumber" id="form-flightNumber" style="text-transform:uppercase" placeholder="Flight number"  title="请输入你乘坐航班的航班号" required>
+							<input type="text" name="flightNumber" id="form-flightNumber" style="text-transform:uppercase" placeholder="Flight number"  title="请输入你乘坐航班的航班号">
 						</td>
 					</tr>
 					<tr id="flightArrivalTerminalRow">
@@ -114,7 +115,16 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="flightArrivalTerminal" id="form-flightArrivalTerminal" placeholder="Arrival terminal"  title="请输入你乘坐航班到达JFK机场的航站楼。" required>
+							<select name="flightArrivalTerminal" id="form-flightArrivalTerminal" title="请选择你乘坐航班到达JFK机场的航站楼。">
+								<option value selected>Select your terminal:</option>
+								<option value="1">Terminal 1</option>
+								<option value="2">Terminal 2</option>
+								<option value="3">Terminal 3</option>
+								<option value="4">Terminal 4</option>
+								<option value="5">Terminal 5</option>
+								<option value="7">Terminal 7</option>
+								<option value="8">Terminal 8</option>
+							</select>
 						</td>
 					</tr>
 				</table>
@@ -130,19 +140,38 @@
 						</td>
 						<td class="rightCol">
 							<select name="destination" id="form-destination" onchange="formDestinationChange(this.value)" title="请选择你在石溪的住址。">
+								<option value selected>Select your apartment:</option>
 								<option value="chapin">Chapin</option>
 								<option value="west">Schomburg or West</option>
 								<option value="other">校外或其他</option>
 							</select>
 						</td>
 					</tr>
-					<tr id="offCampusRow">
+					<tr class="offCampusRow">
 						<td class="leftCol">
 							<label for="form-offCampus" id="form-label-offCampus" class="offCampus">校外住址 </label>
 							<span class="ss-required-asterisk offCampus">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="offCampus" id="form-offCampus" placeholder="Off campus address" class="offCampus" title="请输入你在石溪的校外住址。" required>
+							<input type="text" name="offCampus-addr1" id="form-offCampus-addr1" placeholder="Line 1" class="offCampus" title="请输入你在石溪的校外住址。">
+						</td>
+					</tr>
+					<tr class="offCampusRow">
+						<td class="leftCol"></td>
+						<td class="rightCol">
+							<input type="text" name="offCampus-addr2" id="form-offCampus-addr2" placeholder="Line 2 (optional)" class="offCampus" title="请输入你在石溪的校外住址。">
+						</td>
+					</tr>
+					<tr class="offCampusRow">
+						<td class="leftCol"></td>
+						<td class="rightCol">
+							<input type="text" name="offCampus-city" id="form-offCampus-city" placeholder="City" class="offCampus" title="请输入你在石溪的校外住址。">
+						</td>
+					</tr>
+					<tr class="offCampusRow">
+						<td class="leftCol"></td>
+						<td class="rightCol">
+							<input type="text" name="offCampus-zip" id="form-offCampus-zip" placeholder="Zip code" class="offCampus" title="请输入你在石溪的校外住址。">
 						</td>
 					</tr>
 					<tr id="studentIdRow">
@@ -151,7 +180,7 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="studentId" id="form-studentId" placeholder="Student ID" title="请输入你的学号。" required>
+							<input type="text" name="studentId" id="form-studentId" placeholder="Student ID" title="请输入你的学号。" maxlength="9">
 						</td>
 					</tr>
 					<tr id="majorRow">
@@ -161,7 +190,7 @@
 						</td>
 						<td class="rightCol">
 							<select name="major" id="form-major" title="请选择你的专业。">
-								<option value="0" selected>Select a program:</option>
+								<option value selected>Select a program:</option>
 								<option value="UND">本科生未分专业</option>
 								<option value="AFH">Africana Studies</option>
 								<option value="ANT">Anthropology</option>
@@ -217,7 +246,7 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="qq" id="form-qq" placeholder="QQ" title="请输入你的QQ号。" required>
+							<input type="text" name="qq" id="form-qq" placeholder="QQ" title="请输入你的QQ号。">
 						</td>
 					</tr>
 					<tr id="qqNameRow">
@@ -226,7 +255,7 @@
 							<span class="ss-required-asterisk">*</span>
 						</td>
 						<td class="rightCol">
-							<input type="text" name="qqName" id="form-qqName" placeholder="QQ name" title="请输入你的QQ接机群群名片。" required>
+							<input type="text" name="qqName" id="form-qqName" placeholder="QQ name" title="请输入你的QQ接机群群名片。">
 						</td>
 					</tr>
 					<tr id="memoRow">
