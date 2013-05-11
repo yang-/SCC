@@ -19,13 +19,12 @@ import org.scc.model.AirlineInfo;
  * Servlet implementation class Controller
  */
 @WebServlet("/Register")
-public class Controller extends HttpServlet {
+public class Register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static String SUCCESS = "/done.html";
     private static String FAIL = "/error.html";
-//	private UserDao dao;
 
-	public Controller() {
+	public Register() {
 		super();
 //		dao = new UserDao();
 	}

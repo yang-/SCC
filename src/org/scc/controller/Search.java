@@ -1,4 +1,4 @@
-package org.scc.search;
+package org.scc.controller;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -23,16 +23,15 @@ import org.scc.model.AirlineInfo;
 public class Search extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	private static String SEARCH_BY_DATE = "/search_by_date.jsp";
-	
-	private UserDao dao;
+	private static String SEARCH_BY_DATE = "/search_by_date.jsp";	
+	private static String SHOW_ALL = "/show_all.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
      */
     public Search() {
         super();
-        dao = new UserDao();
+//        dao = new UserDao();
     }
 
 	/**
@@ -47,23 +46,36 @@ public class Search extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		UserDao dao = new UserDao();
+		
 		String para = request.getParameter("show");
-		String q = request.getParameter("q");
 		String forward = "";
 		
-		SimpleDateFormat dtFormat = new SimpleDateFormat("MM/dd/yyyy");
-		Date javaDate = new Date();
-		
-		try {
-			javaDate = dtFormat.parse(q);
-		} catch (ParseException e) {
-			System.out.println(e);
-		}
-		
 		if (para == "date") {
+			
 			forward = SEARCH_BY_DATE;
+			String q = request.getParameter("q");
+			
+			SimpleDateFormat dtFormat = new SimpleDateFormat("MM/dd/yyyy");
+			Date javaDate = new Date();
+			
+			try {
+				javaDate = dtFormat.parse(q);
+			} catch (ParseException e) {
+				System.out.println(e);
+			}
+			
 			List<AirlineInfo> result = dao.getUsersByDate(new java.sql.Date(javaDate.getTime()));
 			request.setAttribute("users", result);
+		} else if (para == "all") {	
+			
+		    forward = SHOW_ALL;
+		    
+			List<AirlineInfo> result = dao.getAllUsers();
+			request.setAttribute("users", result);
+		} else {
+			
+			request.setAttribute("users", null);
 		}
 		
 		RequestDispatcher view = request.getRequestDispatcher(forward);
