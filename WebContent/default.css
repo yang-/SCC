@@ -1,6 +1,6 @@
 /* standard elements */
 * {
-	font: normal 1em "Lucida Sans Unicode",sans-serif;
+	font-family: Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", sans-serif;
 	margin: 0; padding: 0;
 }
 a {
@@ -19,7 +19,7 @@ p,cite,code,ul {
 	margin-bottom: 1.2em;
 }
 h1 {
-	font: normal 1.2em "Lucida Sans Unicode",sans-serif;
+	/*font: normal 1.2em "Lucida Sans Unicode",sans-serif;*/
 }
 ul {
 	margin: 12px 0;
@@ -33,7 +33,7 @@ code {
 	border: 1px dotted #AAA;
 	color: #444;
 	display: block;
-	font: normal 1em "Lucida Sans Unicode",serif;
+	/*font: normal 1em "Lucida Sans Unicode",serif;*/
 	margin-bottom: 12px;
 	padding: 8px 10px;
 	white-space: pre;
@@ -43,7 +43,7 @@ cite {
 	display: block;
 	background: url(img/quote.gif) no-repeat;
 	color: #663;
-	font: normal 1.1em "Lucida Sans Unicode",serif;
+	/*font: normal 1.1em "Lucida Sans Unicode",serif;*/
 	padding-left: 28px;
 }
 
@@ -73,17 +73,17 @@ cite {
 }
 .header h1 {
 	color: #FFF;
-	font: normal 3em "Trebuchet MS",sans-serif;
+	/*font: normal 3em "Trebuchet MS",sans-serif;*/
 	line-height: 60px;
 }
 .header h2 {
 	color: #FFF;
-	font: normal 2em "Trebuchet MS",sans-serif;
+	/*font: normal 2em "Trebuchet MS",sans-serif;*/
 	line-height: 60px;
 }
 .header h3 {
 	color: #FFF;
-	font: normal 2em "Trebuchet MS",sans-serif;
+	/*font: normal 2em "Trebuchet MS",sans-serif;*/
 	line-height: 60px;
 }
 

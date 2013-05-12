@@ -1,4 +1,5 @@
 $(function(){
+	$('input, textarea').placeholder();
 	$(".offCampusRow").hide();
 	// $(".offCampus:input").prop("required", false);
 	// $( document ).tooltip({ position: { my: "left+15 center", at: "right center" } });
