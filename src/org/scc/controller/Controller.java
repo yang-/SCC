@@ -22,12 +22,13 @@ import org.scc.model.AirlineInfo;
 public class Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static String SUCCESS = "/done.html";
-    private static String FAIL = "/error.html";
-//	private UserDao dao;
+	private static String FAIL = "/error.html";
+
+	// private UserDao dao;
 
 	public Controller() {
 		super();
-//		dao = new UserDao();
+		// dao = new UserDao();
 	}
 
 	/**
@@ -45,14 +46,12 @@ public class Controller extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
 		UserDao dao = new UserDao();
-		String forward="";
-		
+		AirlineInfo user = new AirlineInfo();
+		String forward = "";
+
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-
-		AirlineInfo user = new AirlineInfo();
 
 		String aD = request.getParameter("flightDate");
 		String aT = request.getParameter("flightArrivalTime");
@@ -78,22 +77,22 @@ public class Controller extends HttpServlet {
 				.getParameter("flightArrivalTerminal"));
 		user.setTerminal(terminal);
 
-//		user.setFirstName(request.getParameter("firstName"));
-//		user.setLastName(request.getParameter("lastName"));
-		
+		// user.setFirstName(request.getParameter("firstName"));
+		// user.setLastName(request.getParameter("lastName"));
+
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
-		firstName = new String(firstName.getBytes("ISO-8859-1"),"UTF-8");
-		lastName = new String(lastName.getBytes("ISO-8859-1"),"UTF-8");
+		firstName = new String(firstName.getBytes("ISO-8859-1"), "UTF-8");
+		lastName = new String(lastName.getBytes("ISO-8859-1"), "UTF-8");
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
-		
+
 		user.setInitDate(new Date());
 		user.setEmail(request.getParameter("email"));
 		user.setPhone(request.getParameter("emergencyContact"));
 		user.setQQ(request.getParameter("qq"));
 		String qqName = request.getParameter("qqName");
-		qqName = new String(qqName.getBytes("ISO-8859-1"),"UTF-8");
+		qqName = new String(qqName.getBytes("ISO-8859-1"), "UTF-8");
 		user.setQQ_name(qqName);
 		int sbuid = Integer.parseInt(request.getParameter("studentId"));
 		user.setSbuId(sbuid);
@@ -101,14 +100,19 @@ public class Controller extends HttpServlet {
 
 		String des = request.getParameter("destination");
 		user.setDestination(des);
-		if (des.equals("other"))
-			user.setOffCampusRow(request.getParameter("offCampus"));
+		if (des.equals("other")){
+			String offCampus = request.getParameter("offCampus-addr1")
+					+ request.getParameter("offCampus-addr2")
+					+ request.getParameter("offCampus-city")
+					+request.getParameter("offCampus-zip");
+			user.setOffCampusRow(offCampus);
+		}
 		else
 			user.setOffCampusRow(null);
 
 		String memo = request.getParameter("memo");
-		if(memo != null){
-			memo = new String(memo.getBytes("ISO-8859-1"),"UTF-8");
+		if (memo != null) {
+			memo = new String(memo.getBytes("ISO-8859-1"), "UTF-8");
 			user.setMemo(memo);
 		} else {
 			user.setMemo(null);
@@ -120,11 +124,11 @@ public class Controller extends HttpServlet {
 			forward = FAIL;
 		}
 		dao.closeConnection();
-		
+
 		RequestDispatcher view = request.getRequestDispatcher(forward);
-        view.forward(request, response);
-//		response.sendRedirect(forward);
-//        System.out.println(lastName+firstName);
+		view.forward(request, response);
+		// response.sendRedirect(forward);
+		// System.out.println(lastName+firstName);
 	}
 
 }
