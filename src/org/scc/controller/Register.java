@@ -22,13 +22,7 @@ import org.scc.model.AirlineInfo;
 public class Register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static String SUCCESS = "/done.html";
-<<<<<<< HEAD:src/org/scc/controller/Controller.java
-	private static String FAIL = "/error.html";
-
-	// private UserDao dao;
-=======
     private static String FAIL = "/error.html";
->>>>>>> 7fa63d1afee5ac049e89ab05ab144babd03b15eb:src/org/scc/controller/Register.java
 
 	public Register() {
 		super();
