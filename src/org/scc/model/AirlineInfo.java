@@ -19,8 +19,8 @@ public class AirlineInfo {
 	private java.sql.Date DOB;
 	private String phone;
 	private String QQ;
-	private String QQ_name;
-	private int major_id;
+	private String QQName;
+	private int majorId;
 	private String email;
 	private int sbuId;
 	private String destination;
@@ -42,24 +42,24 @@ public class AirlineInfo {
 		this.userId = userId;
 	}
 
-	public String getQQ_name() {
-		return QQ_name;
+	public String getQQName() {
+		return QQName;
 	}
 
-	public void setQQ_name(String qQ_name) {
-		QQ_name = qQ_name;
+	public void setQQName(String qQName) {
+		QQName = qQName;
 	}
 
-	public int getMajor_id() {
-		return major_id;
+	public int getMajorId() {
+		return majorId;
 	}
 
-	public void setMajor_id(String major_name) {
-		this.major_id = Arrays.asList(majorList).indexOf(major_name);
+	public void setMajorId(String major_name) {
+		this.majorId = Arrays.asList(majorList).indexOf(major_name);
 	}
 	
-	public void setMajor_id(int major_id) {
-		this.major_id = major_id;
+	public void setMajorId(int major_id) {
+		this.majorId = major_id;
 	}
 
 	public String getPhone() {
