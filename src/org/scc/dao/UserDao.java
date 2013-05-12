@@ -102,6 +102,54 @@ public class UserDao {
 				user.setMajor_id(res.getInt("Major_Id"));
 				user.setQQ(res.getString("QQ"));
 				user.setQQ_name(res.getString("QQ_Name"));
+				user.setDestination(res.getString("Campus_Address"));
+				user.setOffCampusRow(res.getString("Off_Campus_Address"));
+				user.setMemo(res.getString("Memo"));
+				users.add(user);
+
+			}
+			return users;
+
+		} catch (SQLException e) {
+			System.out.println(e);
+			return null;
+		}
+	}
+	
+	public List<AirlineInfo> getAllUsers() {
+
+		List<AirlineInfo> users = new ArrayList<AirlineInfo>();
+
+		try {
+
+			// Search By Date Query Statement
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("SELECT * FROM New_Student");
+
+			ResultSet res;
+			res = preparedStatement.executeQuery();
+
+			// retrieve results
+
+			while (res.next()) {
+
+				AirlineInfo user = new AirlineInfo();
+
+				user.setUserId(res.getInt("ID"));
+				user.setFirstName(res.getString("First_Name"));
+				user.setLastName(res.getString("Last_Name"));
+				user.setEmail(res.getString("Email"));
+				user.setPhone(res.getString("Phone"));
+				user.setArrivalDate(res.getDate("Arrival_Date"));
+				user.setFlightNumber(res.getString("Flight_Number"));
+				user.setArrivalTime(res.getTime("Arrival_Time"));
+				user.setTerminal(res.getInt("Terminal"));
+				user.setSbuId(res.getInt("Student_Id"));
+				user.setMajor_id(res.getInt("Major_Id"));
+				user.setQQ(res.getString("QQ"));
+				user.setQQ_name(res.getString("QQ_Name"));
+				user.setDestination(res.getString("Campus_Address"));
+				user.setOffCampusRow(res.getString("Off_Campus_Address"));
 				user.setMemo(res.getString("Memo"));
 				users.add(user);
 
