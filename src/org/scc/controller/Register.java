@@ -101,9 +101,9 @@ public class Register extends HttpServlet {
 		String des = request.getParameter("destination");
 		user.setDestination(des);
 		if (des.equals("other")) {
-			String offCampus = request.getParameter("offCampus-addr1")
-					+ request.getParameter("offCampus-addr2")
-					+ request.getParameter("offCampus-city")
+			String offCampus = request.getParameter("offCampus-addr1") + ", "
+					+ request.getParameter("offCampus-addr2") + ", "
+					+ request.getParameter("offCampus-city") + ", "
 					+ request.getParameter("offCampus-zip");
 			user.setOffCampusRow(offCampus);
 		} else
