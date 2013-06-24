@@ -498,7 +498,7 @@ div.buttons div.control-group {
 
       <h1>2013年新生接机报名</h1>
       <p>* Required</p>
-      <form id="signUpForm" name="signUpForm" class="signUpForm form-horizontal" action="Register" method="post" autocomplete="off">
+      <form id="signUpForm" name="signUpForm" class="signUpForm form-horizontal" action="RegisterWS" method="post" autocomplete="off">
         <div class="row">
           <div class="span6 form-basicInfo">
             <h2>基本信息</h2>
@@ -790,13 +790,12 @@ div.buttons div.control-group {
         focusInvalid: true,
         errorElement: 'span',
         submitHandler: function(form) {
-          var formDataString = JSON.stringify($(form).serializeObject());
+          // var formDataString = JSON.stringify($(form).serializeObject());
+          var $form = $('#signUpForm');
           $.ajax({
             type: "POST",
-            url: "RegisterWS",
-            data: {
-              formDataString: formDataString
-            }
+            url: $form.attr( 'action' ),
+            data: form.serialize()
           }).done(function() {
             //成功
             alert("success!");

@@ -1,64 +1,1026 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="description"/>
-<meta name="keywords" content="keywords"/> 
-<meta name="author" content="author"/> 
-<link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
-<title>施福基督教会 Suffolk Christian Church | 校园团契 Campus Fellowship</title>
+  <meta charset="utf-8">
+  <title>施福基督教会 Suffolk Christian Church | 校园团契 Campus Fellowship | 2013年新生接机报名 Register for Airport Pick-up 2013 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles -->
+  <link href="css/bootstrap.bluecn.css" rel="stylesheet">
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/datepicker.css">
+  <style>
+
+  /* GLOBAL STYLES
+  -------------------------------------------------- */
+  /* Padding below the footer and lighter body text */
+
+  body {
+    padding-bottom: 40px;
+    color: #5a5a5a;
+  }
+
+
+
+  /* CUSTOMIZE THE NAVBAR
+  -------------------------------------------------- */
+
+  /* Special class on .container surrounding .navbar, used for positioning it into place. */
+  .navbar-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    margin-top: 20px;
+    margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+  }
+  .navbar-wrapper .navbar {
+
+  }
+
+  /* Remove border and change up box shadow for more contrast */
+  .navbar .navbar-inner {
+    border: 0;
+    -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    box-shadow: 0 2px 10px rgba(0,0,0,.25);
+  }
+
+  /* Downsize the brand/project name a bit */
+  .navbar .brand {
+    padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+  }
+
+  /* Navbar links: increase padding for taller navbar */
+  .navbar .nav > li > a {
+    padding: 15px 20px;
+  }
+
+  /* Offset the responsive button for proper vertical alignment */
+  .navbar .btn-navbar {
+    margin-top: 10px;
+  }
+
+
+
+  /* CUSTOMIZE THE CAROUSEL
+  -------------------------------------------------- */
+
+  /* Carousel base class */
+  .carousel {
+    padding-top: 50px;
+    /*margin-bottom: -20px;*/
+  }
+
+  .carousel .container {
+    position: relative;
+    z-index: 9;
+  }
+
+  .carousel-control {
+    height: 80px;
+    margin-top: 0;
+    font-size: 120px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    background-color: transparent;
+    border: 0;
+    z-index: 9;
+  }
+
+  .carousel .item {
+    height: 500px;
+  }
+  .carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+  }
+
+  .carousel-caption {
+    background-color: transparent;
+    position: static;
+    max-width: 550px;
+    padding: 0 20px;
+    margin-top: 200px;
+  }
+  .carousel-caption h1,
+  .carousel-caption .lead {
+    margin: 0;
+    line-height: 1.25;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,.75);
+  }
+  .carousel-caption .btn {
+    margin-top: 10px;
+  }
+
+
+ /* REGISTER CONTENT
+ -------------------------------------------------- */
+
+ /* Center align the text within the three columns below the carousel */
+ .register {
+  padding-top: 50px;
+}
+
+.register .span4 {
+  text-align: center;
+}
+
+.register h1, .register p {
+  text-align: center;
+}
+
+.register h2 {
+  font-weight: normal;
+  text-align: center;
+}
+.register .span4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+  /* MARKETING CONTENT
+  -------------------------------------------------- */
+
+  /* Center align the text within the three columns below the carousel */
+  .marketing {
+    padding-top: 50px;
+  }
+
+  .marketing .span4 {
+    text-align: center;
+  }
+  .marketing h2 {
+    font-weight: normal;
+  }
+  .marketing .span4 p {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+
+  /* Featurettes
+  ------------------------- */
+
+  /*.featurette-divider {
+    margin: 80px 0;  Space out the Bootstrap <hr> more 
+  }*/
+  .featurette {
+    padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+    overflow: hidden; /* Vertically center images part 2: clear their floats. */
+  }
+  .featurette-image {
+    margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+  }
+
+  /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+  .featurette-image.pull-left {
+    margin-right: 40px;
+  }
+  .featurette-image.pull-right {
+    margin-left: 40px;
+  }
+
+  /* Thin out the marketing headings */
+  .featurette-heading {
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+/* CONTACT CONTENT
+ -------------------------------------------------- */
+
+ .contact {
+  padding-top: 50px;
+}
+
+.contact .span4 {
+  text-align: center;
+}
+
+.contact h1, .contact p {
+  text-align: center;
+}
+
+.contact h2 {
+  font-weight: normal;
+  text-align: center;
+}
+.contact .span4 p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+  /* RESPONSIVE CSS
+  -------------------------------------------------- */
+
+  @media (max-width: 979px) {
+
+    .container.navbar-wrapper {
+      margin-bottom: 0;
+      width: auto;
+    }
+    .navbar-inner {
+      border-radius: 0;
+      margin: -20px 0;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      width: auto;
+      height: 500px;
+    }
+
+    .featurette {
+      height: auto;
+      padding: 0;
+    }
+    .featurette-image.pull-left,
+    .featurette-image.pull-right {
+      display: block;
+      float: none;
+      max-width: 40%;
+      margin: 0 auto 20px;
+    }
+  }
+
+
+  @media (max-width: 767px) {
+
+    .navbar-inner {
+      margin: -20px;
+    }
+
+    .carousel {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+    .carousel .container {
+
+    }
+    .carousel .item {
+      height: 300px;
+    }
+    .carousel img {
+      height: 300px;
+    }
+    .carousel-caption {
+      width: 65%;
+      padding: 0 70px;
+      margin-top: 100px;
+    }
+    .carousel-caption h1 {
+      font-size: 30px;
+    }
+    .carousel-caption .lead,
+    .carousel-caption .btn {
+      font-size: 18px;
+    }
+
+    .marketing .span4 + .span4 {
+      margin-top: 40px;
+    }
+
+    .featurette-heading {
+      font-size: 30px;
+    }
+    .featurette .lead {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+  }
+
+  body {
+   font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+ }
+
+ div#recaptcha_area {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.buttons div.control-group {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.offCampusRow {
+  display: none;
+}
+
+.form-stonyBrookInfo {
+  height: 310px;
+}
+ </style>
+
+ <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="../assets/ico/favicon.png">
 </head>
-<body>
 
-<div class="header">
-	<h1>施福基督教会 Suffolk Christian Church</h1>
-	<h2>校园团契 Campus Fellowship</h2>
-	<h3>2013年新生接机</h3>
-</div>
+<body data-spy="scroll" data-target=".navbar" data-offset='0'>
 
-<div class="navigation">
-	<a href="index.html">Home</a>
-	<a href="register.html">Register for Airport Pick-up 2013</a>
-	<a href="contact-us.html">Contact Us</a>
-	<div class="clearer"><span></span></div>
-</div>
 
-<div class="container">
-	<div class="content">
 
-		<h1>2013年新生接机</h1>
-		<p>新生接机简短介绍</p>
-		<p>可以加入引用段落</p>
+<!-- NAVBAR
+  ================================================== -->
+  <div class="navbar-wrapper">
+    <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
 
-		<cite>耶稣说：『我就是道路、真理、生命，若不藉着我，没有人能到父那里去』— 约翰福音14：6</cite>
-		<p>可以有<a href="index.html">链接</a></p>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#home">施福基督教会校园团契</a>
+          <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#register">Register</a></li>
+              <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div><!-- /.navbar-inner -->
+    </div><!-- /.navbar -->
 
-		<div class="divider"></div>
+  </div><!-- /.navbar-wrapper -->
 
-		<h1>施福基督教会介绍</h1>
-		<p>施福基督教会介绍，可以有list</p>
-		<ul>
-			<li>耶稣是光</li>
-			<li>耶稣是好牧人</li>
-			<li>耶稣是。。。</li>
-		</ul>
 
-		<div class="divider"></div>
 
-		<h1>校园团契介绍</h1>
-		<p>校园团契介绍，code tag 效果如下：</p>
-		<code>margin-bottom: 12px;
-font: normal 1.1em "Lucida Sans Unicode",serif;
-background: url(img/quote.gif) no-repeat;
-padding-left: 28px;
-color: #555;</code>
-	</div>
+<!-- Carousel
+  ================================================== -->
+  <div id="home" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="img/carousel/slide-01.jpg" height="500" width="1500" alt="">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>施福基督教会</h1>
+            <p class="lead">施福基督教会（Suffolk Christian Church）是一所以宣扬救主耶稣基督福音为使命，带领人来到永生的创造主面前，认罪悔改，接受耶稣，得享永生的教会。</p>
+            <a class="btn btn-large btn-primary" href="https://docs.google.com/spreadsheet/viewform?formkey=dHJKeVhMS1RVM0ZsUFlsVWt5MVRXN1E6MQ" target="_blank">教会活动报名</a>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="img/carousel/slide-02.jpg" height="500" width="1500" alt="">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>校园团契</h1>
+            <p class="lead">每周五晚上7：00在纽约州立大学石溪分校的UNION 231，有唱诗赞美、祷告及圣经学习。团契成员有在石溪大学及附近其他学校就学的中国留学生，其中包括本科生、研究生、博士生、博士后以及访问学者。</p>
+            <a class="btn btn-large btn-primary" href="#about-fellowship">Learn more</a>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <img src="img/carousel/slide-03.jpg" height="500" width="1500" alt="">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>2013年新生接机 </h1>
+            <p class="lead">施福华人基督教会组织接机。8月10,11, 17, 18 下午5点前到JFK的新生。</p>
+            <a class="btn btn-large btn-primary" href="#register">新生接机报名</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="left carousel-control" href="#home" data-slide="prev">&lsaquo;</a>
+    <a class="right carousel-control" href="#home" data-slide="next">&rsaquo;</a>
+  </div><!-- /.carousel -->
 
-	<div class="footer">
-		&copy; 2013 <a href="index.html">Suffolk Christian Church Campus Fellowship</a>. All rights reserved.
-	</div>
 
-</div>
 
+<!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="span4">
+        <img class="img-circle" src="img/prayer.png" width="140" height="140">
+        <h2>校园祷告会</h2>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+        <p><a class="btn" href="#">View details &raquo;</a></p>
+      </div><!-- /.span4 -->
+      <div class="span4">
+        <img class="img-circle" src="img/facebook.png" width="140" height="140">
+        <h2>刚强团契</h2>
+        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn" href="https://www.facebook.com/groups/354472637897752/" target="_blank">View details &raquo;</a></p>
+      </div><!-- /.span4 -->
+      <div class="span4">
+        <img class="img-circle" src="img/stony-brook.png" width="140" height="140">
+        <h2>新生接机</h2>
+        <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn" href="#register">View details &raquo;</a></p>
+      </div><!-- /.span4 -->
+    </div><!-- /.row -->
+
+  </div>
+  <!-- START THE FEATURETTES -->
+
+  <hr class="featurette-divider">
+
+
+  <div id="about" class="container marketing">
+    <div class="featurette">
+      <img class="featurette-image pull-right" src="img/church.png">
+      <h2 class="featurette-heading">施福基督教会介绍 <span class="muted">It'll blow your mind.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+
+    <hr class="featurette-divider">
+  </div>
+
+  <div id="about-fellowship" class="container marketing">
+    <div class="featurette">
+      <img class="featurette-image pull-left" src="img/fellowship.png">
+      <h2 class="featurette-heading">校园团契介绍 <span class="muted">See for yourself.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="featurette">
+      <img class="featurette-image pull-right" src="img/stonybrook.png">
+      <h2 class="featurette-heading">新生接机简短介绍 <span class="muted">Checkmate.</span></h2>
+      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+  </div><!-- /.container -->
+  <div id="contact" class="container contact">
+    <h1>施福基督教会</h1>
+    <p>您若想更多了解施福基督教会，或有代祷事项，请用以下您认为合适的方式与我们联系，我们会很愿意回答您的问题，愿　神祝福您。</p>
+    <p>电话：（631）588-9286</p>
+    <p>教会地址：18 Moriches Rd, Lake Grove, NY 11755, USA</p>
+    <hr>
+    <h1>校园团契</h1>
+    <p>每周五晚上7：00在纽约州立大学石溪分校的UNION 231，有唱诗赞美、祷告及圣经学习。</p><p>团契成员有在石溪大学及附近其他学校就学的中国留学生，其中包括本科生、研究生、博士生、博士后以及访问学者。</p>
+    <p>施福基督教会校园团契及主日<a href="https://docs.google.com/spreadsheet/viewform?formkey=dHJKeVhMS1RVM0ZsUFlsVWt5MVRXN1E6MQ">报名链接</a></p>
+    <p>您若有什么问题或想参加我们的校园团契，请发邮件至campus@scc-ny.org，我们的同工会与您联系，愿　神祝福您！</p>
+    <hr>
+  </div>
+
+  <div id="register" class="container register">
+    <div class="content">
+
+      <h1>2013年新生接机报名</h1>
+      <p>* Required</p>
+      <form id="signUpForm" name="signUpForm" class="signUpForm form-horizontal" action="RegisterWS" method="post" autocomplete="off">
+        <div class="row">
+          <div class="span6 form-basicInfo">
+            <h2>基本信息</h2>
+            <div id="lastNameRow" class="control-group">
+              <label class="control-label" for="form-lastName">姓* </label>
+              <div class="controls">
+                <input type="text" name="lastName" id="form-lastName" placeholder="Last name" title="请输入真实中文姓名。">
+              </div>
+            </div>
+            <div id="firstNameRow" class="control-group">
+              <label class="control-label" for="form-firstName">名* </label>
+              <div class="controls">
+                <input type="text" name="firstName" id="form-firstName" placeholder="First name" title="请输入真实中文姓名。">
+              </div>
+            </div>
+            <div id="emailRow" class="control-group">
+              <label class="control-label" for="form-email">邮箱* </label>
+              <div class="controls">
+                <input type="email" name="email" id="form-email" placeholder="name@example.com" title="请输入常用邮箱。">
+              </div>
+            </div>
+            <div id="emergencyContactRow" class="control-group">
+              <label class="control-label" for="form-emergencyContact">国内紧急联系电话* </label>
+              <div class="controls">
+                <input type="text" name="emergencyContact" id="form-emergencyContact" placeholder="Emergency contact" title="请输入国内紧急联系电话。">
+              </div>
+            </div>
+          </div>
+          <div class="span6 form-flightInfo">
+            <h2>航班信息</h2>
+            <div id="flightArrivalDateRow" class="control-group">
+              <label class="control-label" for="form-flightArrivalDate">到达日期* </label>
+              <div class="controls">
+                <input type="text" name="flightArrivalDate" id="form-flightArrivalDate" placeholder="Arrival date" style="cursor: pointer;" readonly title="请选择你的到达日期（美国东部时间）。">
+              </div>
+            </div>
+            <div id="flightArrivalTimeRow" class="control-group">
+              <label class="control-label" for="form-flightArrivalTime">到达时间(24小时制)* </label>
+              <div class="controls">
+                <input type="text" name="flightArrivalTime" id="form-flightArrivalTime" placeholder="HH:MM" title="请输入你乘坐航班的到达时间（美国东部时间）">
+              </div>
+            </div>
+            <div id="flightNumberRow" class="control-group">
+              <label class="control-label" for="form-flightNumber">航班号* </label>
+              <div class="controls">
+                <input type="text" name="flightNumber" id="form-flightNumber" style="text-transform:uppercase" placeholder="Flight number"  title="请输入你乘坐航班的航班号">
+              </div>
+            </div>
+            <div id="flightArrivalTerminalRow" class="control-group">
+              <label class="control-label" for="form-flightArrivalTerminal">到达航站楼* </label>
+              <div class="controls">
+                <select name="flightArrivalTerminal" id="form-flightArrivalTerminal" title="请选择你乘坐航班到达JFK机场的航站楼。">
+                  <option value selected>Select your terminal:</option>
+                  <option value="1">Terminal 1</option>
+                  <option value="2">Terminal 2</option>
+                  <option value="3">Terminal 3</option>
+                  <option value="4">Terminal 4</option>
+                  <option value="5">Terminal 5</option>
+                  <option value="7">Terminal 7</option>
+                  <option value="8">Terminal 8</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row form-stonyBrookInfo">
+          <div class="span12">
+            <h2>石溪信息</h2>
+          </div>
+          <div id="sbLeft" class="span6">
+              <div id="destinationRow" class="control-group">
+                  <label class="control-label" for="form-destination">宿舍或校外住址* </label>
+                <div class="controls">
+                  <select name="destination" id="form-destination" onchange="formDestinationChange(this.value)" title="请选择你在石溪的住址。">
+                    <option value selected>Select your apartment:</option>
+                    <option value="chapin">Chapin</option>
+                    <option value="west">Schomburg or West</option>
+                    <option value="other">校外或其他</option>
+                  </select>
+                </div>
+              </div>
+              <div class="control-group offCampusRow">
+                <label class="control-label" for="form-offCampus-addr1">校外地址* </label>
+                <div class="controls">
+                  <input type="text" name="offCampus-addr1" id="form-offCampus-addr1" placeholder="Line 1" class="offCampus" title="请输入你在石溪的校外住址。">
+                </div>
+              </div>
+              <div class="control-group offCampusRow">
+                <label class="control-label" for="form-offCampus-addr2">地址（第二行） </label>
+                <div class="controls">
+                  <input type="text" name="offCampus-addr2" id="form-offCampus-addr2" placeholder="Line 2 (optional)" class="offCampus" title="请输入你在石溪的校外住址。">
+                </div>
+              </div>
+              <div class="control-group offCampusRow">
+                <label class="control-label" for="form-offCampus-city">城市* </label>
+                <div class="controls">
+                  <input type="text" name="offCampus-city" id="form-offCampus-city" placeholder="City" class="offCampus" title="请输入你在石溪的校外住址。" data-provide="typeahead" data-items="4" data-source='["Stony Brook","Belle Terre","Centereach","East Setauket","Head of the Harbor","Lake Grove","Nesconset","Nissequogue","Old Field","Poquott","Port Jefferson","Port Jefferson Station","Saint James","Setauket","South Setauket","Terryville"]' >
+                </div>
+              </div>
+              <div class="control-group offCampusRow">
+                <label class="control-label" for="form-offCampus-state">州* </label>
+                <div class="controls">
+                  <input type="text" name="offCampus-state" id="form-offCampus-state" placeholder="State" class="offCampus" value="New York" readonly style="cursor: default;">
+                </div>
+              </div>
+              <div class="control-group offCampusRow">
+                <label class="control-label" for="form-offCampus-zip">邮编* </label>
+                <div class="controls">
+                  <input type="text" name="offCampus-zip" id="form-offCampus-zip" placeholder="Zip code" class="offCampus" title="请输入你在石溪的校外住址。">
+                </div>
+              </div>
+              <div id="studentIdRow" class="control-group movingRow">
+                  <label class="control-label" for="form-studentId">学号* </label>
+                <div class="controls">
+                  <input type="text" name="studentId" id="form-studentId" placeholder="Student ID" title="请输入你的学号。" maxlength="9">
+                </div>
+              </div>
+              <div id="majorRow" class="control-group  movingRow">
+                  <label class="control-label" for="form-major">专业* </label>
+                <div class="controls">
+                  <select name="major" id="form-major" title="请选择你的专业。">
+                    <option value selected>Select a program:</option>
+                    <option value="UND">本科生未分专业</option>
+                    <option value="AFH">Africana Studies</option>
+                    <option value="ANT">Anthropology</option>
+                    <option value="AMS">Applied Mathematics</option>
+                    <option value="ARH">Art History</option>
+                    <option value="ARS">Art - Studio</option>
+                    <option value="BCB">Biochem &amp; Cell Biology</option>
+                    <option value="BME">Biomedical Engineering</option>
+                    <option value="MBA">College of Business</option>
+                    <option value="CHE">Chemistry</option>
+                    <option value="CLCS">Comparative Literary</option>
+                    <option value="CSE">Computer Science</option>
+                    <option value="CWL">Creative Writing &amp; Literature</option>
+                    <option value="BEE">Ecology &amp; Evolution</option>
+                    <option value="ESE">Electrical &amp; Computer Engg.</option>
+                    <option value="EGL">English</option>
+                    <option value="EURO">European Languages</option>
+                    <option value="GEO">Geosciences</option>
+                    <option value="GSS">Geospatial Science</option>
+                    <option value="SPN">Hispanic Languages</option>
+                    <option value="HIS">History</option>
+                    <option value="ISE">Information Systems</option>
+                    <option value="JRN">Journalism</option>
+                    <option value="LIN">Linguistics</option>
+                    <option value="MAS">Marine Sciences</option>
+                    <option value="ESM">Materials Science</option>
+                    <option value="MAT">Mathematics</option>
+                    <option value="MEC">Mechanical Engg.</option>
+                    <option value="MH">Medical Humanities</option>
+                    <option value="MUS">Music</option>
+                    <option value="HDO">Oral Biology</option>
+                    <option value="PHI">Philosophy</option>
+                    <option value="PHY">Physics &amp; Astronomy</option>
+                    <option value="HBY">Physiology &amp; Biophysics</option>
+                    <option value="POL">Political Science</option>  
+                    <option value="publichealth">Public Health</option> 
+                    <option value="PUB">Public Policy</option>
+                    <option value="PSY">Psychology</option>
+                    <option value="SOC">Sociology</option>
+                    <option value="ARS">Studio Arts</option>
+                    <option value="EST">Technology and Society</option>
+                    <option value="THR">Theatre Arts</option>
+                    <option value="THR2"> Theatre, MFA</option>
+                    <option value="WST">Women's Studies</option>        
+                    <option value="WRT">Writing and Rhetoric</option>
+                    <option value="ohter">Others</option>
+                  </select>
+                </div>
+              </div>
+              <div id="qqRow" class="control-group movingRow">
+                  <label class="control-label" for="form-qq">QQ* </label>
+                <div class="controls">
+                  <input type="text" name="qq" id="form-qq" placeholder="QQ" title="请输入你的QQ号。">
+                </div>
+              </div>
+              <div id="qqNameRow" class="control-group movingRow">
+                  <label class="control-label" for="form-qqName">群名片* </label>
+                <div class="controls">
+                  <input type="text" name="qqName" id="form-qqName" placeholder="QQ name" title="请输入你的QQ接机群群名片。">
+                </div>
+              </div>
+          </div>
+          <div id="sbRight" class="span6">
+            <div id="memoRow" class="control-group">
+              <label class="control-label" for="form-memo">备注 </label>
+              <div class="controls">
+                <textarea name="memo" id="form-memo" form="signUpForm" placeholder="选填。请输入你的补充说明，如你的性别、体形、接机当天的着装、行李的数量等。" title="选填。请输入你的补充说明，如你的性别、体形、接机当天的着装、行李的数量等。" maxlength="500" rows="5" cols="44"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row recaptcha">
+          <div class="span12">
+            <hr class="captcha">
+            <h2 class="captcha">验证信息</h2>
+            <div id="captchadiv" style="width: 449px; margin-left: auto; margin-right: auto;"></div>
+          </div>
+        </div>
+        <div class="row buttons">
+          <div class="span12">
+            <div class="control-group">
+                <input id="btnReset" class="btn btn-large" type="reset" value="Reset"  onclick="formDestinationChange(this.value)">
+                <input type="button" value="Verify" class="btn btn-large btn-primary captcha" onclick="verify()">
+                <input id="btnSubmit" class="btn btn-large btn-success" type="submit" value="Submit"  style="display:none;">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container marketing">
+    <!-- FOOTER -->
+    <footer>
+      <p class="pull-right"><a href="#home">Back to top</a></p>
+      <p>&copy; 2013 Suffolk Christian Church Campus Fellowship.  All rights reserved. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+  </div><!-- /.container -->
+
+
+
+<!-- Le javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/jquery.maskedinput.min.js"></script>
+  <script src="js/bootstrap-transition.js"></script>
+  <script src="js/bootstrap-alert.js"></script>
+  <script src="js/bootstrap-modal.js"></script>
+  <script src="js/bootstrap-dropdown.js"></script>
+  <script src="js/bootstrap-scrollspy.js"></script>
+  <script src="js/bootstrap-tab.js"></script>
+  <script src="js/bootstrap-tooltip.js"></script>
+  <script src="js/bootstrap-popover.js"></script>
+  <script src="js/bootstrap-button.js"></script>
+  <script src="js/bootstrap-collapse.js"></script>
+  <script src="js/bootstrap-carousel.js"></script>
+  <script src="js/bootstrap-typeahead.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script>
+  !function ($) {
+    $(function(){
+      // $(".offCampusRow").hide();
+      // carousel demo
+      $('#home').carousel();
+      // $('.navbar').scrollspy();
+      $(".navbar a, .container a").click(function(){
+        var href = $(this).attr("href");
+        var pos = $(href).offset().top;
+        $("html,body").animate({scrollTop: pos}, 500);
+        return false;
+      });
+
+      //datepicker
+      var today = new Date();
+      var startDate = new Date(2013, 7, 9);
+      startDate = today.getTime()<startDate.getTime()?startDate:today;
+      $('#form-flightArrivalDate').datepicker({
+        startDate: startDate,
+        endDate: new Date(2013, 7, 25),
+        autoclose: true,
+        keyboardNavigation: false
+      }).on('hide', function(e) {
+        // # `e` here contains the extra attributes
+        $( this ).valid();
+      });
+      //datepicker end
+
+      $("#form-flightArrivalTime").mask("99:99");
+
+      $('input').keypress(function(e){
+        if ( e.which == 13 ) return false;
+      });
+      $.validator.addMethod("chinese", function(value, element) { 
+        return this.optional(element) || !/[u4e00-u9fa5]/.test(value); 
+      }, "Please enter chinese characters.");
+      $.validator.addMethod("time12", function(value, element) { 
+        return this.optional(element) || /^(([0]?[1-9])|([1][0-2])):([0-5]?[0-9])?$/.test(value); 
+      }, "Please valid time.");
+      $.validator.addMethod("time24", function(value, element) { 
+        return this.optional(element) || /^(([0-1]?[0-9])|([2][0-3])):([0-5]?[0-9])?$/.test(value); 
+      }, "Please valid time.");
+      $("#signUpForm").validate({
+        focusInvalid: true,
+        errorElement: 'span',
+        // submitHandler: function(form) {
+        //   // var formDataString = JSON.stringify($(form).serializeObject());
+        //   var $form = $('form');
+        //   $.ajax({
+        //     type: "POST",
+        //     url: $form.attr( 'action' ),
+        //     data: form.serialize()
+        //   }).done(function(data) {
+        //     if (data == "good") {
+        //       alert("success!");
+        //     } else {
+        //       alert("fail!");
+        //     }
+        //   }).fail(function() {
+        //     alert("fail!");
+        //   });
+        // },
+        onkeyup: function(element) {$(element).valid()},
+        onfocusout: function(element) {$(element).valid()},
+        highlight: function(element, errorClass, validClass) {
+          $(element).closest('.control-group').addClass(errorClass).removeClass(validClass);
+          // $(element).next().addClass('help-inline');
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $(element).closest('.control-group').removeClass(errorClass).addClass(validClass);
+          $(element).next().remove();
+        },
+        errorPlacement: function(error, element) {
+          var temp = element.siblings('span');
+          if (temp.length == 0) {
+          error.removeAttr("for").removeClass('error').addClass('help-inline').insertAfter(element);
+        }
+        },
+        rules: {
+          "lastName": {
+            required: true,
+            chinese: true
+          },
+          "firstName": {
+            required: true,
+            chinese: true
+          },
+          "email": {
+            required: true,
+            email: true
+          },
+          "emergencyContact": {
+            required: true,
+            minlength: 10
+          },
+          "flightArrivalDate": "required",
+          "flightArrivalTime": "required time24",
+          "flightNumber": "required",
+          "flightArrivalTerminal": "required",
+          "destination": "required",
+          "offCampus-addr1": {
+            required: function(){
+              return $("#form-destination").val() == 'other';
+            }
+          },
+          "offCampus-city": {
+            required: function(){
+              return $("#form-destination").val() == 'other';
+            }
+          },
+          "offCampus-zip": {
+            required: function(){
+              return $("#form-destination").val() == 'other';
+            },
+            number: true
+          },
+          "studentId": {
+            required: true,
+            number: true,
+            minlength: 9
+          },
+          "major": "required",
+          "qq": {
+            required: true,
+            number: true
+          },
+          "qqName": "required"
+        },
+        messages: {
+          "lastName": "请输入真实中文姓名。",
+          "firstName": "请输入真实中文姓名。",
+          "email": {
+            required: "请输入常用邮箱。",
+            email: "请正确输入常用邮箱。"
+          },
+          "emergencyContact": {
+            required: "请输入国内联系电话。",
+            minlength: "请正确输入国内电话。"
+          },
+          "flightArrivalDate": "请选择到达日期(EST)",
+          "flightArrivalTime": "请输入到达时间(EST)",
+          "flightNumber": "请输入航班号",
+          "flightArrivalTerminal": "请选择到达航站楼。",
+          "destination": "请选择你在石溪的住址。",
+          "offCampus-addr1": "请输入校外住址。",
+          "offCampus-city": "请输入校外住址。",
+          "offCampus-zip": {
+            required: "请输入住址的邮编。",
+            number: "请正确输入住址邮编。"
+          },
+          "studentId": {
+            required: "请输入你的学号。",
+            number: "请正确输入你的学号。",
+            minlength: "请正确输入你的学号。"
+          },
+          "major": "请选择你的专业。",
+          "qq": {
+            required: "请输入你的QQ号。",
+            number: "请正确输入你的QQ号。"
+          },
+          "qqName": "请输入你的QQ群名片。"
+        }
+      });
+
+      //recaptcha
+      initRecaptcha();
+
+      //form 
+      // $('input[type="submit"]').toggle();
+      $('#signUpForm').submit(function(e) {
+        e.preventDefault();
+        var $form = $(this);
+          $.ajax({
+            type: "POST",
+            url: $form.attr( 'action' ),
+            data: $form.serialize()
+          }).done(function(data) {
+            if (data == "good") {
+              alert("success!");
+            } else {
+              alert("fail!");
+            }
+          }).fail(function() {
+            alert("fail!");
+          });
+      });
+    })
+  }(window.jQuery)
+
+  function initRecaptcha(){
+  Recaptcha.create("6LcQjOASAAAAAOb3OKWr6GfOVHhdkEjgdfkBzxwy", 'captchadiv', {
+    theme : "clean",
+    callback : function(){
+      $('input[type=text]').keypress(function(e){
+        if ( e.which == 13 ) return false;
+      });
+    }
+  });
+}
+
+function verify(){
+  var response = Recaptcha.get_response();
+  if (response == "") {
+    Recaptcha.focus_response_field();
+  } else{
+    var jqxhr = $.ajax({
+      type: "POST",
+      url: "Recaptcha",
+      data: { 
+        recaptcha_challenge_field: Recaptcha.get_challenge(), 
+        recaptcha_response_field: response
+      },
+      beforeSend: function() {
+        $('input.captcha').val('Verifying..').prop('disabled', true);
+      }
+    }).done(function( data ) {
+      if (data == "good") {
+        $('div.row.recaptcha').slideUp();
+        $('input.captcha').css("display","none");
+        $('input[type="submit"]').css("display","inline-block");
+        // $('input[type="submit"]').removeAttr('disabled');
+        Recaptcha.destroy();
+      } else{
+        Recaptcha.reload();
+        
+      };
+    }).fail(function() { 
+      Recaptcha.destroy();
+      $("div#captchadiv").text("Error #1");
+    }).always(function() {
+      $('input.captcha').val('Verify').prop('disabled', false);
+    });
+    
+  };
+}
+
+function formDestinationChange(select){
+  if (select == "other") {
+    $(".movingRow").slideUp(function() {
+      $('.form-stonyBrookInfo').animate({
+        height: '390px'
+      });
+      $(this).prependTo("#sbRight").slideDown();
+      $(".offCampusRow").slideDown();
+    });
+    // $(".offCampus:input").prop("required", true);
+  } else {
+    if( $('.offCampusRow').css("display") == 'block') {
+      $(".offCampusRow").slideUp();
+      $('.form-stonyBrookInfo').animate({
+        height: '310px'
+      });
+      $(".movingRow").slideUp(function() {
+        $(this).appendTo("#sbLeft").slideDown();
+      });
+      // $(".offCampus:input").prop("required", false);
+    }
+  };      
+}
+
+
+$.fn.serializeObject = function()
+{
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
+  </script>
 </body>
 </html>
