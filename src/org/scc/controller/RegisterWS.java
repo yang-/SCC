@@ -46,6 +46,7 @@ public class RegisterWS extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		UserDao dao = new UserDao();
 
 		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
@@ -55,18 +56,18 @@ public class RegisterWS extends HttpServlet {
 		// 基本信息
 		// lastName
 		String lastName = request.getParameter("lastName");
-		lastName = new String(lastName.getBytes("ISO-8859-1"), "UTF-8");
+//		lastName = new String(lastName.getBytes("ISO-8859-1"), "UTF-8");
 		user.setLastName(lastName);
 		// firstName
 		String firstName = request.getParameter("firstName");
-		firstName = new String(firstName.getBytes("ISO-8859-1"), "UTF-8");
+//		firstName = new String(firstName.getBytes("ISO-8859-1"), "UTF-8");
 		user.setFirstName(firstName);
 		// email
 		user.setInitDate(new Date());
 		user.setEmail(request.getParameter("email"));
 		// emergencyContact
 		String emergencyContact = request.getParameter("emergencyContact");
-		emergencyContact = new String(emergencyContact.getBytes("ISO-8859-1"), "UTF-8");
+//		emergencyContact = new String(emergencyContact.getBytes("ISO-8859-1"), "UTF-8");
 		user.setPhone(emergencyContact);
 		// 航班信息
 		// flightArrivalDate
@@ -110,7 +111,7 @@ public class RegisterWS extends HttpServlet {
 		}
 		// qqName
 		String qqName = request.getParameter("qqName");
-		qqName = new String(qqName.getBytes("ISO-8859-1"), "UTF-8");
+//		qqName = new String(qqName.getBytes("ISO-8859-1"), "UTF-8");
 		user.setQQName(qqName);
 		// qq#
 		user.setQQ(request.getParameter("qq"));
@@ -121,7 +122,7 @@ public class RegisterWS extends HttpServlet {
 		user.setSbuId(sbuid);
 		// memo
 		String memo = request.getParameter("memo");
-		memo = new String(memo.getBytes("ISO-8859-1"), "UTF-8");
+//		memo = new String(memo.getBytes("ISO-8859-1"), "UTF-8");
 		user.setMemo(memo);
 		
 		// dao
@@ -130,6 +131,7 @@ public class RegisterWS extends HttpServlet {
 		} else {
 			response.getWriter().write("bad");
 		}
+		dao.closeConnection();
 //		System.out.println(lastName);
 	}
 

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>施福基督教会 Suffolk Christian Church | 校园团契 Campus Fellowship | 2013年新生接机报名 Register for Airport Pick-up 2013 </title>
+  <link id="page_favicon" href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA/j8AAP6/AAD+vwAA/r8AAP6/AAD+vwAA/r8AAP6/AADwhwAA9/cAAPCHAAD+vwAA/r8AAP4/AAD//wAA" rel="icon" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -55,6 +56,25 @@
     font-weight: bold;
     text-shadow: 0 -1px 0 rgba(0,0,0,.5);
   }
+
+  .navbar .brand-right {
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: 20px;
+    float: right;
+    font-weight: bold;
+    color: #034482;
+    text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    transition: all .2s linear;
+  }
+
+  .navbar .brand-right:hover {
+    color: #ffffff;
+text-decoration: none;
+text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
+}
 
   /* Navbar links: increase padding for taller navbar */
   .navbar .nav > li > a {
@@ -134,7 +154,7 @@
   text-align: center;
 }
 
-.register h1, .register p {
+.register h1, .register p.star {
   text-align: center;
 }
 
@@ -145,6 +165,14 @@
 .register .span4 p {
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.register .content {
+  min-height: 300px;
+}
+
+.register .signUpResult {
+  display: none;
 }
 
   /* MARKETING CONTENT
@@ -358,6 +386,7 @@ div.buttons div.control-group {
             <span class="icon-bar"></span>
           </button>
           <a class="brand" href="#home">施福基督教会校园团契</a>
+          <a class="brand brand-right" href="http://www.scc-ny.org/" target="_blank">施福基督教会</a>
           <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
           <div class="nav-collapse collapse">
             <ul class="nav">
@@ -426,22 +455,22 @@ div.buttons div.control-group {
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="span4">
-        <img class="img-circle" src="img/prayer.png" width="140" height="140">
-        <h2>校园祷告会</h2>
+        <a href="https://docs.google.com/spreadsheet/viewform?formkey=dHJKeVhMS1RVM0ZsUFlsVWt5MVRXN1E6MQ" target="_blank"><img class="img-circle" src="img/church.png" width="140" height="140"></a>
+        <h2>教会活动报名</h2>
         <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
-        <p><a class="btn" href="#">View details &raquo;</a></p>
+        <!-- <p><a class="btn" href="#">View details &raquo;</a></p> -->
       </div><!-- /.span4 -->
       <div class="span4">
-        <img class="img-circle" src="img/facebook.png" width="140" height="140">
+        <a href="https://www.facebook.com/groups/354472637897752/" target="_blank"><img class="img-circle" src="img/facebook.png" width="140" height="140"></a>
         <h2>刚强团契</h2>
         <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn" href="https://www.facebook.com/groups/354472637897752/" target="_blank">View details &raquo;</a></p>
+        <!-- <p><a class="btn" href="https://www.facebook.com/groups/354472637897752/" target="_blank">View details &raquo;</a></p> -->
       </div><!-- /.span4 -->
       <div class="span4">
-        <img class="img-circle" src="img/stony-brook.png" width="140" height="140">
+        <a href="#register"><img class="img-circle" src="img/stony-brook.png" width="140" height="140"></a>
         <h2>新生接机</h2>
         <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn" href="#register">View details &raquo;</a></p>
+        <!-- <p><a class="btn" href="#register">View details &raquo;</a></p> -->
       </div><!-- /.span4 -->
     </div><!-- /.row -->
 
@@ -497,8 +526,9 @@ div.buttons div.control-group {
     <div class="content">
 
       <h1>2013年新生接机报名</h1>
-      <p>* Required</p>
+      
       <form id="signUpForm" name="signUpForm" class="signUpForm form-horizontal" action="RegisterWS" method="post" autocomplete="off">
+        <p class="star">* 必填 Required</p>
         <div class="row">
           <div class="span6 form-basicInfo">
             <h2>基本信息</h2>
@@ -710,6 +740,17 @@ div.buttons div.control-group {
           </div>
         </div>
       </form>
+      <!-- <div class="signUpResult"> -->
+          <div class="span7 offset2 signUpResult alert alert-block fade in">
+            <!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+            <h4 class="alert-heading"></h4>
+            <p></p>
+            <p class="pull-right"><a href="#home">Back to top</a></p>
+            <!-- <p>
+              <a class="btn btn-danger" href="#">Take this action</a> <a class="btn" href="#">Or do this</a>
+            </p> -->
+          </div>
+        <!-- </div> -->
     </div>
   </div>
   <div class="container marketing">
@@ -730,6 +771,7 @@ div.buttons div.control-group {
   <script src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
   <script src="js/jquery.validate.min.js"></script>
   <script src="js/jquery.maskedinput.min.js"></script>
+  <script src="js/jquery.placeholder.min.js"></script>
   <script src="js/bootstrap-transition.js"></script>
   <script src="js/bootstrap-alert.js"></script>
   <script src="js/bootstrap-modal.js"></script>
@@ -746,7 +788,7 @@ div.buttons div.control-group {
   <script>
   !function ($) {
     $(function(){
-      // $(".offCampusRow").hide();
+      $('input, textarea').placeholder();
       // carousel demo
       $('#home').carousel();
       // $('.navbar').scrollspy();
@@ -763,12 +805,19 @@ div.buttons div.control-group {
       startDate = today.getTime()<startDate.getTime()?startDate:today;
       $('#form-flightArrivalDate').datepicker({
         startDate: startDate,
-        endDate: new Date(2013, 7, 25),
+        endDate: new Date(2013, 7, 18),
         autoclose: true,
         keyboardNavigation: false
       }).on('hide', function(e) {
         // # `e` here contains the extra attributes
         $( this ).valid();
+      }).on('show', function(e){
+        $('td.day').addClass('disabled');
+        $('.day:contains("10")').removeClass('disabled');
+        $('.day:contains("11")').removeClass('disabled');
+        $('.day:contains("16")').removeClass('disabled');
+        $('.day:contains("17")').removeClass('disabled');
+        $('.day:contains("18")').removeClass('disabled');
       });
       //datepicker end
 
@@ -786,7 +835,7 @@ div.buttons div.control-group {
       $.validator.addMethod("time24", function(value, element) { 
         return this.optional(element) || /^(([0-1]?[0-9])|([2][0-3])):([0-5]?[0-9])?$/.test(value); 
       }, "Please valid time.");
-      $("#signUpForm").validate({
+      var validator = $("#signUpForm").validate({
         focusInvalid: true,
         errorElement: 'span',
         // submitHandler: function(form) {
@@ -914,6 +963,7 @@ div.buttons div.control-group {
       //form 
       // $('input[type="submit"]').toggle();
       $('#signUpForm').submit(function(e) {
+        if (validator.form()) {
         e.preventDefault();
         var $form = $(this);
           $.ajax({
@@ -922,14 +972,34 @@ div.buttons div.control-group {
             data: $form.serialize()
           }).done(function(data) {
             if (data == "good") {
-              alert("success!");
+              // alert("success!");
+              $('.signUpResult').addClass('alert-success').find('.alert-heading').text('报名成功').next().html('报名成功了哦~~~');
             } else {
-              alert("fail!");
+              // alert("fail!");              
+              $('.signUpResult').addClass('alert-error').find('.alert-heading').text('报名失败').next().html('服务器异常了哦~~~<a id="retry" href="#">重试</a>');
             }
           }).fail(function() {
-            alert("fail!");
+            // alert("fail!");
+            $('.signUpResult').addClass('alert-error').find('.alert-heading').text('报名失败').next().html('服务器请求超时了哦~~~<a id="retry" href="#">重试</a>');
+          }).always(function() {
+            $('.signUpForm').slideUp(function() {
+              $('.signUpResult').fadeIn();
+            });
           });
+        }
       });
+
+      $('.signUpResult').on('click', '#retry', function(event) {
+        event.preventDefault();
+        initRecaptcha();
+        $('div.row.recaptcha').show();
+        $('input.captcha').show();
+        $('input[type="submit"]').hide();
+        $('.signUpResult').fadeOut(function() {
+          $('.signUpForm').slideDown();
+        });
+      });
+
     })
   }(window.jQuery)
 
