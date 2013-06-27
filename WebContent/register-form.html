@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>2013年新生接机报名 Register for Airport Pick-up 2013 | 施福基督教会校园团契 Suffolk Christian Church Campus Fellowship</title>
+  <link id="page_favicon" href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA/j8AAP6/AAD+vwAA/r8AAP6/AAD+vwAA/r8AAP6/AADwhwAA9/cAAPCHAAD+vwAA/r8AAP4/AAD//wAA" rel="icon" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- Le styles -->
+  <link href="css/bootstrap.bluecn.css" rel="stylesheet">
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/datepicker.css">
+  <link rel="stylesheet" type="text/css" href="css/docs.css">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="../assets/js/html5shiv.js"></script>
+<![endif]-->
+
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="../assets/ico/favicon.png">
+</head>
+
+<body>
+
+
+<!-- Register
+  ================================================== -->
+  <div id="register" class="container register">
+    <div class="content">
+      <div class="span10 offset1">
+      <!-- <div> -->
+        <!-- <img class="featurette-image pull-right" src="img/stonybrook.png"> -->
+        <h2 class="featurette-heading">新生接机介绍</h2>
+        <p class="lead">　　施福基督教会每年都会参与迎接石溪大学新生的工作。从2010年学校取消校巴接机以后，我们开始承担联系巴士到肯尼迪国际机场(JFK)接新生的事工。因着　神的祝福与保守，过去三年我们的事工都能顺利完成。今年我们也会尽力让大家平安的到达学校。</p>
+      </div>
+      <div class="span12">
+      <hr class="featurette-divider">
+      <h1>2013年新生接机报名表</h1>
+            <p class="star">* 必填 Required</p>
+          </div>
+      <form id="signUpForm" name="signUpForm" class="signUpForm form-horizontal" action="RegisterWS" method="post" autocomplete="off">
+
+        <div class="row">
+          
+          <div class="span6 form-basicInfo">
+            <h2>基本信息</h2>
+            <div id="lastNameRow" class="control-group">
+              <label class="control-label" for="form-lastName">姓* </label>
+              <div class="controls">
+                <input type="text" name="lastName" id="form-lastName" placeholder="Last name" title="请输入真实中文姓名。">
+              </div>
+            </div>
+            <div id="firstNameRow" class="control-group">
+              <label class="control-label" for="form-firstName">名* </label>
+              <div class="controls">
+                <input type="text" name="firstName" id="form-firstName" placeholder="First name" title="请输入真实中文姓名。">
+              </div>
+            </div>
+            <div id="emailRow" class="control-group">
+              <label class="control-label" for="form-email">邮箱* </label>
+              <div class="controls">
+                <input type="email" name="email" id="form-email" placeholder="name@example.com" title="请输入常用邮箱。">
+              </div>
+            </div>
+            <div id="emergencyContactRow" class="control-group">
+              <label class="control-label" for="form-emergencyContact">国内紧急联系电话* </label>
+              <div class="controls">
+                <input type="text" name="emergencyContact" id="form-emergencyContact" placeholder="Emergency contact" title="请输入国内紧急联系电话。">
+              </div>
+            </div>
+          </div>
+          <div class="span6 form-flightInfo">
+            <h2>航班信息</h2>
+            <div id="flightArrivalDateRow" class="control-group">
+              <label class="control-label" for="form-flightArrivalDate">到达日期* </label>
+              <div class="controls">
+                <input type="text" name="flightArrivalDate" id="form-flightArrivalDate" placeholder="Arrival date" style="cursor: pointer;" readonly title="请选择你的到达日期（美国东部时间）。">
+              </div>
+            </div>
+            <div id="flightArrivalTimeRow" class="control-group">
+              <label class="control-label" for="form-flightArrivalTime">到达时间(24小时制)* </label>
+              <div class="controls">
+                <input type="text" name="flightArrivalTime" id="form-flightArrivalTime" placeholder="HH:MM" title="请输入你乘坐航班的到达时间（美国东部时间）">
+              </div>
+            </div>
+            <div id="flightNumberRow" class="control-group">
+              <label class="control-label" for="form-flightNumber">航班号* </label>
+              <div class="controls">
+                <input type="text" name="flightNumber" id="form-flightNumber" style="text-transform:uppercase" placeholder="Flight number"  title="请输入你乘坐航班的航班号">
+              </div>
+            </div>
+            <div id="flightArrivalTerminalRow" class="control-group">
+              <label class="control-label" for="form-flightArrivalTerminal">到达航站楼* </label>
+              <div class="controls">
+                <select name="flightArrivalTerminal" id="form-flightArrivalTerminal" title="请选择你乘坐航班到达JFK机场的航站楼。">
+                  <option value selected>Select your terminal:</option>
+                  <option value="1">Terminal 1</option>
+                  <option value="2">Terminal 2</option>
+                  <option value="3">Terminal 3</option>
+                  <option value="4">Terminal 4</option>
+                  <option value="5">Terminal 5</option>
+                  <option value="7">Terminal 7</option>
+                  <option value="8">Terminal 8</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="row form-stonyBrookInfo">
+          <div class="span12">
+            <h2>石溪信息</h2>
+          </div>
+          <div id="sbLeft" class="span6">
+            <div id="destinationRow" class="control-group">
+              <label class="control-label" for="form-destination">宿舍或校外住址* </label>
+              <div class="controls">
+                <select name="destination" id="form-destination" onchange="formDestinationChange(this.value)" title="请选择你在石溪的住址。">
+                  <option value selected>Select your apartment:</option>
+                  <option value="chapin">Chapin</option>
+                  <option value="west">Schomburg or West</option>
+                  <option value="other">校外或其他</option>
+                </select>
+              </div>
+            </div>
+            <div class="control-group offCampusRow">
+              <label class="control-label" for="form-offCampus-addr1">校外地址* </label>
+              <div class="controls">
+                <input type="text" name="offCampus-addr1" id="form-offCampus-addr1" placeholder="Line 1" class="offCampus" title="请输入你在石溪的校外住址。">
+              </div>
+            </div>
+            <div class="control-group offCampusRow">
+              <label class="control-label" for="form-offCampus-addr2">地址（第二行） </label>
+              <div class="controls">
+                <input type="text" name="offCampus-addr2" id="form-offCampus-addr2" placeholder="Line 2 (optional)" class="offCampus" title="请输入你在石溪的校外住址。">
+              </div>
+            </div>
+            <div class="control-group offCampusRow">
+              <label class="control-label" for="form-offCampus-city">城市* </label>
+              <div class="controls">
+                <input type="text" name="offCampus-city" id="form-offCampus-city" placeholder="City" class="offCampus" title="请输入你在石溪的校外住址。" data-provide="typeahead" data-items="4" data-source='["Stony Brook","Belle Terre","Centereach","East Setauket","Head of the Harbor","Lake Grove","Nesconset","Nissequogue","Old Field","Poquott","Port Jefferson","Port Jefferson Station","Saint James","Setauket","South Setauket","Terryville"]' >
+              </div>
+            </div>
+            <div class="control-group offCampusRow">
+              <label class="control-label" for="form-offCampus-state">州* </label>
+              <div class="controls">
+                <input type="text" name="offCampus-state" id="form-offCampus-state" placeholder="State" class="offCampus" value="New York" readonly style="cursor: default;">
+              </div>
+            </div>
+            <div class="control-group offCampusRow">
+              <label class="control-label" for="form-offCampus-zip">邮编* </label>
+              <div class="controls">
+                <input type="text" name="offCampus-zip" id="form-offCampus-zip" placeholder="Zip code" class="offCampus" title="请输入你在石溪的校外住址。">
+              </div>
+            </div>
+            <div id="studentIdRow" class="control-group movingRow">
+              <label class="control-label" for="form-studentId">学号* </label>
+              <div class="controls">
+                <input type="text" name="studentId" id="form-studentId" placeholder="Student ID" title="请输入你的学号。" maxlength="9">
+              </div>
+            </div>
+            <div id="majorRow" class="control-group  movingRow">
+              <label class="control-label" for="form-major">专业* </label>
+              <div class="controls">
+                <select name="major" id="form-major" title="请选择你的专业。">
+                  <option value selected>Select a program:</option>
+                  <option value="UND">本科生未分专业</option>
+                  <option value="AFH">Africana Studies</option>
+                  <option value="ANT">Anthropology</option>
+                  <option value="AMS">Applied Mathematics</option>
+                  <option value="ARH">Art History</option>
+                  <option value="ARS">Art - Studio</option>
+                  <option value="BCB">Biochem &amp; Cell Biology</option>
+                  <option value="BME">Biomedical Engineering</option>
+                  <option value="MBA">College of Business</option>
+                  <option value="CHE">Chemistry</option>
+                  <option value="CLCS">Comparative Literary</option>
+                  <option value="CSE">Computer Science</option>
+                  <option value="CWL">Creative Writing &amp; Literature</option>
+                  <option value="BEE">Ecology &amp; Evolution</option>
+                  <option value="ESE">Electrical &amp; Computer Engg.</option>
+                  <option value="EGL">English</option>
+                  <option value="EURO">European Languages</option>
+                  <option value="GEO">Geosciences</option>
+                  <option value="GSS">Geospatial Science</option>
+                  <option value="SPN">Hispanic Languages</option>
+                  <option value="HIS">History</option>
+                  <option value="ISE">Information Systems</option>
+                  <option value="JRN">Journalism</option>
+                  <option value="LIN">Linguistics</option>
+                  <option value="MAS">Marine Sciences</option>
+                  <option value="ESM">Materials Science</option>
+                  <option value="MAT">Mathematics</option>
+                  <option value="MEC">Mechanical Engg.</option>
+                  <option value="MH">Medical Humanities</option>
+                  <option value="MUS">Music</option>
+                  <option value="HDO">Oral Biology</option>
+                  <option value="PHI">Philosophy</option>
+                  <option value="PHY">Physics &amp; Astronomy</option>
+                  <option value="HBY">Physiology &amp; Biophysics</option>
+                  <option value="POL">Political Science</option>  
+                  <option value="publichealth">Public Health</option> 
+                  <option value="PUB">Public Policy</option>
+                  <option value="PSY">Psychology</option>
+                  <option value="SOC">Sociology</option>
+                  <option value="ARS">Studio Arts</option>
+                  <option value="EST">Technology and Society</option>
+                  <option value="THR">Theatre Arts</option>
+                  <option value="THR2"> Theatre, MFA</option>
+                  <option value="WST">Women's Studies</option>        
+                  <option value="WRT">Writing and Rhetoric</option>
+                  <option value="ohter">Others</option>
+                </select>
+              </div>
+            </div>
+            <div id="qqRow" class="control-group movingRow">
+              <label class="control-label" for="form-qq">QQ* </label>
+              <div class="controls">
+                <input type="text" name="qq" id="form-qq" placeholder="QQ" title="请输入你的QQ号。">
+              </div>
+            </div>
+            <div id="qqNameRow" class="control-group movingRow">
+              <label class="control-label" for="form-qqName">群名片* </label>
+              <div class="controls">
+                <input type="text" name="qqName" id="form-qqName" placeholder="QQ name" title="请输入你的QQ接机群群名片。">
+              </div>
+            </div>
+          </div>
+          <div id="sbRight" class="span6">
+            <div id="memoRow" class="control-group">
+              <label class="control-label" for="form-memo">备注 </label>
+              <div class="controls">
+                <textarea name="memo" id="form-memo" form="signUpForm" placeholder="选填。请输入你的补充说明，如你的性别、体形、接机当天的着装、行李的数量等。" title="选填。请输入你的补充说明，如你的性别、体形、接机当天的着装、行李的数量等。" maxlength="500" rows="5" cols="44"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row recaptcha">
+          <div class="span12">
+            <hr class="captcha">
+            <h2 class="captcha">验证信息</h2>
+            <div id="captchadiv" style="width: 449px; margin-left: auto; margin-right: auto;"></div>
+          </div>
+        </div>
+        <div class="row buttons">
+          <div class="span12">
+            <div class="control-group">
+              <input id="btnReset" class="btn btn-large" type="reset" value="Reset"  onclick="formDestinationChange(this.value)">
+              <input type="button" value="Verify" class="btn btn-large btn-primary captcha" onclick="verify()">
+              <input id="btnSubmit" class="btn btn-large btn-success" type="submit" value="Submit"  style="display:none;">
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- <div class="signUpResult"> -->
+      <div class="span7 offset2 signUpResult alert alert-block fade in">
+        <!-- <button type="button" class="close" data-dismiss="alert">&times;</button> -->
+        <h4 class="alert-heading"></h4>
+        <p></p>
+        <p class="pull-right"><a href="#home">Back to top</a></p>
+            <!-- <p>
+              <a class="btn btn-danger" href="#">Take this action</a> <a class="btn" href="#">Or do this</a>
+            </p> -->
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+
+
+
+<!-- Le javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/recaptcha_ajax.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/jquery.maskedinput.min.js"></script>
+  <script src="js/jquery.placeholder.min.js"></script>
+  <!-- <script src="js/bootstrap-transition.js"></script> -->
+  <!-- <script src="js/bootstrap-alert.js"></script> -->
+  <!-- <script src="js/bootstrap-modal.js"></script> -->
+  <!-- <script src="js/bootstrap-dropdown.js"></script> -->
+  <!-- <script src="js/bootstrap-scrollspy.js"></script> -->
+  <!-- <script src="js/bootstrap-tab.js"></script> -->
+  <!-- <script src="js/bootstrap-tooltip.js"></script> -->
+  <!-- <script src="js/bootstrap-popover.js"></script> -->
+  <!-- <script src="js/bootstrap-button.js"></script> -->
+  <!-- <script src="js/bootstrap-collapse.js"></script> -->
+  <!-- <script src="js/bootstrap-carousel.js"></script> -->
+  <script src="js/bootstrap-typeahead.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>
