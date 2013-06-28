@@ -162,6 +162,14 @@ min-height: 300px;
 display: none;
 }
 
+.form-horizontal .control-label {
+width: 180px;
+}
+
+.form-horizontal .controls {
+margin-left: 200px;
+}
+
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
@@ -181,6 +189,17 @@ display: none;
   margin-right: 10px;
 }
 
+.img-circle {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(246, 212, 163, 0.5) inset, 0px -1px 5px 4px rgba(170, 77, 27, 0.2) inset, 0px 0px 0px 7px #fff, 0px 0px 1px 8px rgba(188, 188, 188, 0.4), 0px 0px 0px 9px #fff;
+-moz-box-shadow: 0px 0px 5px 0px rgba(246, 212, 163, 0.5) inset, 0px -1px 5px 4px rgba(170, 77, 27, 0.2) inset, 0px 0px 0px 7px #fff, 0px 0px 1px 8px rgba(188, 188, 188, 0.4), 0px 0px 0px 9px #fff;
+box-shadow: 0px 0px 5px 0px rgba(246, 212, 163, 0.5) inset, 0px -1px 5px 4px rgba(170, 77, 27, 0.2) inset, 0px 0px 0px 7px #fff, 0px 0px 1px 8px rgba(188, 188, 188, 0.4), 0px 0px 0px 9px #fff;
+}
+
+.img-circle:hover {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(246, 212, 163, 0.5) inset, 0px -1px 5px 4px rgba(170, 77, 27, 0.2) inset, 0px 0px 0px 7px #fff, 1px 4px 5px 8px rgba(188, 188, 188, 0.6), 0px 0px 0px 9px #fff;
+-moz-box-shadow: 0px 0px 5px 0px rgba(246, 212, 163, 0.5) inset, 0px -1px 5px 4px rgba(170, 77, 27, 0.2) inset, 0px 0px 0px 7px #fff, 1px 4px 5px 8px rgba(188, 188, 188, 0.6), 0px 0px 0px 9px #fff;
+box-shadow: 0px 0px 5px 0px rgba(246, 212, 163, 0.5) inset, 0px -1px 5px 4px rgba(170, 77, 27, 0.2) inset, 0px 0px 0px 7px #fff, 1px 4px 5px 8px rgba(188, 188, 188, 0.6), 0px 0px 0px 9px #fff;
+}
 
 /* Featurettes
 ------------------------- */
@@ -210,6 +229,7 @@ display: none;
 
   /* Thin out the marketing headings */
   .featurette-heading {
+    text-align: center;
     font-size: 50px;
     font-weight: 300;
     line-height: 1;
@@ -342,7 +362,7 @@ display: none;
 }
 
 .form-stonyBrookInfo {
-height: 310px;
+min-height: 310px;
 }
 
 

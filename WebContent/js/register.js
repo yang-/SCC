@@ -261,10 +261,18 @@ function verify(){
 }
 
 function formDestinationChange(select){
+  var maxHeight, minHeight;
+  if (window.innerWidth < 768) {
+    maxHeight = '680px';
+    minHeight = '430px';
+  } else {
+    maxHeight = '390px';
+    minHeight = '310px';
+  }
   if (select == "other") {
     $(".movingRow").slideUp(function() {
       $('.form-stonyBrookInfo').animate({
-        height: '390px'
+        height: maxHeight
       });
       $(this).prependTo("#sbRight").slideDown();
       $(".offCampusRow").slideDown();
@@ -274,7 +282,7 @@ function formDestinationChange(select){
     if( $('.offCampusRow').css("display") == 'block') {
       $(".offCampusRow").slideUp();
       $('.form-stonyBrookInfo').animate({
-        height: '310px'
+        height: minHeight
       });
       $(".movingRow").slideUp(function() {
         $(this).appendTo("#sbLeft").slideDown();
