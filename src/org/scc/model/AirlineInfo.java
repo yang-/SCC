@@ -33,6 +33,8 @@ public class AirlineInfo {
 		                                 "MAT","MEC","MH","MUS","HDO","PHI","PHY","HBY","POL",
 		                                 "publichealth","PUB","PSY","SOC","ARS","EST","THR","THR2",
 		                                 "WST","WRT","ohter"};
+	private static String[] majorNameList = {"0", "本科生未分专业", "Africana Studies", "Anthropology", "Applied Mathematics", "Art History", "Art - Studio", "Biochem &amp; Cell Biology", "Biomedical Engineering", "College of Business", "Chemistry", "Comparative Literary", "Computer Science", "Creative Writing &amp; Literature", "Ecology &amp; Evolution", "Electrical &amp; Computer Engg.", "English", "European Languages", "Geosciences", "Geospatial Science", "Hispanic Languages", "History", "Information Systems", "Journalism", "Linguistics", "Marine Sciences", "Materials Science", "Mathematics", "Mechanical Engg.", "Medical Humanities", "Music", "Oral Biology", "Philosophy", "Physics &amp; Astronomy", "Physiology &amp; Biophysics", "Political Science", 
+		"Public Health", "Public Policy", "Psychology", "Sociology", "Studio Arts", "Technology and Society", "Theatre Arts", " Theatre, MFA", "Women's Studies", "Writing and Rhetoric", "Others"};
 	
 	public int getUserId() {
 		return userId;
@@ -52,6 +54,10 @@ public class AirlineInfo {
 
 	public int getMajorId() {
 		return majorId;
+	}
+	
+	public String getMajorName() {
+		return majorNameList[majorId];
 	}
 
 	public void setMajorId(String major_name) {

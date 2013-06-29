@@ -14,17 +14,11 @@
         startDate: startDate,
         endDate: new Date(2013, 7, 18),
         autoclose: true,
+        daysOfWeekDisabled: [1,2,3,4],
         keyboardNavigation: false
       }).on('hide', function(e) {
         // # `e` here contains the extra attributes
         $( this ).valid();
-      }).on('show', function(e){
-        $('td.day').addClass('disabled');
-        $('.day:contains("10")').removeClass('disabled');
-        $('.day:contains("11")').removeClass('disabled');
-        $('.day:contains("16")').removeClass('disabled');
-        $('.day:contains("17")').removeClass('disabled');
-        $('.day:contains("18")').removeClass('disabled');
       });
       //datepicker end
 

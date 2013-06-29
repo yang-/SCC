@@ -1,12 +1,11 @@
 package org.scc.controller;
 
 import java.io.IOException;
-import java.net.URLDecoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.servlet.RequestDispatcher;
+import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,9 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.scc.dao.UserDao;
+import org.scc.mail.SendMail;
 import org.scc.model.AirlineInfo;
-
-import com.google.gson.Gson;
 
 /**
  * Servlet implementation class Controller
@@ -89,7 +87,7 @@ public class RegisterWS extends HttpServlet {
 			System.out.println(e);
 		}
 		// flightNumber
-		user.setFlightNumber(request.getParameter("flightNumber"));
+		user.setFlightNumber(request.getParameter("flightNumber").toUpperCase());
 		// flightArrivalTerminal
 		int terminal = Integer.parseInt(request
 				.getParameter("flightArrivalTerminal"));
@@ -127,6 +125,13 @@ public class RegisterWS extends HttpServlet {
 		
 		// dao
 		if (dao.addUser(user)) {
+			//send confirmation email
+			try {
+				SendMail.sendMail(user);
+			} catch (MessagingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			response.getWriter().write("good");
 		} else {
 			response.getWriter().write("bad");
