@@ -1,4 +1,4 @@
-package org.scc.mail;
+package org.scc.util;
 
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;

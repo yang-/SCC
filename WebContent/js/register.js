@@ -170,7 +170,10 @@
           $.ajax({
             type: "POST",
             url: $form.attr( 'action' ),
-            data: $form.serialize()
+            data: $form.serialize(),
+            beforeSend: function() {
+              $('input[type="submit"]').val('Submitting..').prop('disabled', true);
+            }
           }).done(function(data) {
             if (data == "good") {
               // alert("success!");
@@ -186,6 +189,7 @@
             $("html,body").animate({scrollTop: 236}, 500, function() {
               $('.signUpForm').fadeOut(500, function() {
               $('.signUpResult').fadeIn(500);
+              $('input[type="submit"]').val('Submit').prop('disabled', false);
             });
             });
             
@@ -196,7 +200,7 @@
       $('.signUpResult').on('click', '#retry', function(event) {
         event.preventDefault();
         initRecaptcha();
-        $('div.row.recaptcha').show();
+        $('div.recaptcha .span12').show();
         $('input.captcha').show();
         $('input[type="submit"]').hide();
         $('.signUpResult').fadeOut(500, function() {
@@ -235,7 +239,7 @@ function verify(){
       }
     }).done(function( data ) {
       if (data == "good") {
-        $('div.row.recaptcha').slideUp();
+        $('div.recaptcha .span12').slideUp();
         $('input.captcha').css("display","none");
         $('input[type="submit"]').css("display","inline-block");
         // $('input[type="submit"]').removeAttr('disabled');

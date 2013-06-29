@@ -13,8 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.scc.dao.UserDao;
-import org.scc.mail.SendMail;
 import org.scc.model.AirlineInfo;
+import org.scc.util.SendMail;
+import org.scc.util.Spreadsheet;
+
+import com.google.gdata.util.AuthenticationException;
+import com.google.gdata.util.ServiceException;
 
 /**
  * Servlet implementation class Controller
@@ -125,6 +129,8 @@ public class RegisterWS extends HttpServlet {
 		
 		// dao
 		if (dao.addUser(user)) {
+			response.getWriter().write("good");
+
 			//send confirmation email
 			try {
 				SendMail.sendMail(user);
@@ -132,12 +138,20 @@ public class RegisterWS extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			response.getWriter().write("good");
+			try {
+				Spreadsheet.updateSpreadsheet(user);
+			} catch (AuthenticationException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (ServiceException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+//			response.getWriter().write("good");
 		} else {
 			response.getWriter().write("bad");
 		}
 		dao.closeConnection();
-//		System.out.println(lastName);
 	}
 
 }
